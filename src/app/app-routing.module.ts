@@ -6,6 +6,10 @@ import { ClearMenuResolve } from './services/clearMenu.resolve';
 
 const appRoutes: Routes = [
   {
+    path: 'docentes',
+    loadChildren: './publico/publico.module#PublicoModule'
+  },
+  {
     path: 'login',
     loadChildren: './login/login.module#LoginModule'
   },
@@ -23,7 +27,7 @@ const appRoutes: Routes = [
     },
     runGuardsAndResolvers: 'always'
   },
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: '/docentes', pathMatch: 'full' },
   { path: '**', component: Error404Component }
 ];
 

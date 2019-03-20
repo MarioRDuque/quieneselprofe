@@ -8,6 +8,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ToastNoAnimationModule } from 'ngx-toastr';
 import { Error404Component } from './componentesgenerales/error404/error404.component';
 import { ClearMenuResolve } from './services/clearMenu.resolve';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { ClearMenuResolve } from './services/clearMenu.resolve';
     BrowserModule,
     AppRoutingModule,
     ToastNoAnimationModule.forRoot(),
+    NgbModule.forRoot(),
+    ScrollToModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [AuthGuardService, ClearMenuResolve],

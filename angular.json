@@ -26,7 +26,14 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "src/assets/tema/js/pace.min.js",
+              "src/assets/tema/js/perfect-scrollbar.min.js",
+              "src/assets/tema/js/coreui.min.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
