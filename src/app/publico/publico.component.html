@@ -1,0 +1,520 @@
+<div id="all">
+  <!-- Top bar-->
+  <div class="top-bar">
+    <div class="container">
+      <div class="row d-flex align-items-center">
+        <div class="col-md-6 d-md-block d-none">
+          <p>Hecho por TesistaUNP</p>
+        </div>
+        <div class="col-md-6">
+          <div class="d-flex justify-content-md-end justify-content-between">
+            <ul class="list-inline contact-info d-block d-md-none">
+              <li class="list-inline-item"><a href="#"><i class="fa fa-phone"></i></a></li>
+              <li class="list-inline-item"><a href="#"><i class="fa fa-envelope"></i></a></li>
+            </ul>
+            <div class="login cursor-pointer">
+              <a (click)="abrirLogin()" class="login-btn">
+                <i class="fa fa-sign-in"></i><span class="d-none d-md-inline-block">Iniciar sesion</span>
+              </a>
+              <a href="#registrarse" class="signup-btn" (click)="triggerScrollTo('registrarse')" data-toggle="dropdown">
+                <i class="fa fa-user"></i><span class="d-none d-md-inline-block a"> Registrarse</span>
+              </a>
+            </div>
+            <ul class="social-custom list-inline">
+              <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li class="list-inline-item"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+              <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Top bar end-->
+  <!-- Navbar Start-->
+  <header class="nav-holder make-sticky">
+    <div id="navbar" role="navigation" class="navbar navbar-expand-lg">
+      <div class="container">
+        <a href="index.html" class="navbar-brand home" id="comienzo">
+          <img src="assets/img/logotipo.png" alt="Universal logo" class="d-none d-md-inline-block">
+          <img src="assets/img/logotipo.png" alt="Universal logo" class="d-inline-block d-md-none logo">
+          <span class="sr-only">Universal</span>
+        </a>
+        <button type="button" data-toggle="collapse" data-target="#navigation"
+          class="navbar-toggler btn-template-outlined">
+          <span class="sr-only">Toggle navigation</span><i class="fa fa-align-justify"></i>
+        </button>
+        <div id="navigation" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item dropdown"><a href="#comienzo" (click)="triggerScrollTo('comienzo')"
+                data-toggle="dropdown" [routerLinkActive]="['active']">Inicio</a>
+            </li>
+            <li class="nav-item dropdown"><a href="#nosotros" (click)="triggerScrollTo('nosotros')"
+                data-toggle="dropdown" [routerLinkActive]="['active']">Nosotros</a>
+            </li>
+            <li class="nav-item dropdown"><a href="javascript: void(0)" data-toggle="dropdown" class="dropdown-toggle"
+                [routerLinkActive]="['active']">Software <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-item"><a href="#bills" class="nav-link">Bill's</a></li>
+                <li class="dropdown-item"><a href="#servicios" class="nav-link">Servicios</a></li>
+                <li class="dropdown-item"><a href="#planes" class="nav-link">Planes</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown"><a href="#clientes" data-toggle="dropdown"
+                [routerLinkActive]="['active']">Docentes</a>
+            </li>
+            <li class="nav-item dropdown"><a href="javascript(0)" (click)="triggerScrollTo('contacto')"
+                data-toggle="dropdown" [routerLinkActive]="['active']">Contacto</a>
+            </li>
+          </ul>
+        </div>
+        <div id="search" class="collapse clearfix">
+          <form role="search" class="navbar-form">
+            <div class="input-group">
+              <input type="text" placeholder="Search" class="form-control">
+              <span class="input-group-btn">
+                <button type="submit" class="btn btn-template-main"><i class="fa fa-search"></i></button>
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Navbar End-->
+  <section style="background: url('assets/img/photogrid.jpg') center center repeat; background-size: cover;"
+    class="bar background-white relative-positioned">
+    <div class="container">
+      <!-- Carousel Start-->
+      <div class="home-carousel">
+        <div class="dark-mask mask-primary"></div>
+        <ngb-carousel *ngIf="images">
+          <ng-template ngbSlide>
+            <div class="item">
+              <div class="row">
+                <div class="col-md-5 text-right">
+                  <br><br>
+                  <h1>Sistema de Interactividad Educativa Universitaria</h1>
+                  <p>crea tu perfil y hazle saber a tu comunidad la importancia de estar conectados.</p>
+                </div>
+                <div class="col-md-7 text-center"><img [src]="images[0]" alt="Random first slide"
+                    style="height: 350px!important;" class="img-fluid"></div>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template ngbSlide>
+            <div class="item">
+              <div class="row">
+                <div class="col-md-7 text-center"><img [src]="images[1]" alt="Random second slide"
+                    style="height: 350px!important;" class="img-fluid">
+                </div>
+                <div class="col-md-5 text-left">
+                  <br><br>
+                  <h1>Perfil docente actualizado</h1>
+                  <p>
+                    Comparte el mejor contenido de materias online.
+                    Interactivo y fácil acceso al sistema.
+                    Gestiona desde cualquier dispositivo.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+          <ng-template ngbSlide>
+            <div class="item">
+              <div class="row">
+                <div class="col-md-5 text-right">
+                  <br><br>
+                  <h1>Lo que aquí encontrarás</h1>
+                  <p>
+                    Ubica a tu docente de manera directa entrando a su perfil.
+                    Adelanta temas de estudio.
+                    Sugiere post.
+                    Postea y haste fan.
+                  </p>
+                </div>
+                <div class="col-md-7 text-center"><img [src]="images[2]" alt="Random third slide"
+                    style="height: 350px!important;">
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </ngb-carousel>
+      </div>
+    </div>
+  </section>
+  <section class="bar background-white">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="box-simple">
+            <div class="icon-outlined"><i class="fa fa-desktop"></i></div>
+            <h3 class="h4">Diseño Web</h3>
+            <p>El sistema abarca un buen diseño gráfico web, diseño de interfaz, obteniendo una excelente
+              experiencia al usuario como la navegabilidad, interactividad, usabilidad y arquitectura de la
+              información.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="box-simple">
+            <div class="icon-outlined"><i class="fa fa-print"></i></div>
+            <h3 class="h4">Impresión</h3>
+            <p>Los reportes de cada proceso de interacción del sistema de interactividad educativa brinda el servicio de
+              descarga e impresión, facilitando al usuario la mejor experiencia.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="box-simple">
+            <div class="icon-outlined"><i class="fa fa-globe"></i></div>
+            <h3 class="h4">Control</h3>
+            <p>El sistema brinda el mejor control de noticias y actualidad, personalizando y facilitando la gestión
+              desde cualquier dispositivo móvil: celular, tablet y PC.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6">
+          <div class="box-simple">
+            <div class="icon-outlined"><i class="fa fa-lightbulb-o"></i></div>
+            <h3 class="h4">Consultas</h3>
+            <p>El sistema le brinda al usuario las respuestas necesarias de cualquier consulta que propone
+              respecto al sistema de interactividad educativa.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="box-simple">
+            <div class="icon-outlined"><i class="fa fa-envelope-o"></i></div>
+            <h3 class="h4">Email</h3>
+            <p>Suscríbete a tu docente de interés y recibe la notficiaciones via email, de los mas recientes posts y
+              actualizaciones.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="box-simple">
+            <div class="icon-outlined"><i class="fa fa-user"></i></div>
+            <h3 class="h4">Usuarios</h3>
+            <p>Los usuario docentes, tienen la posibilidad de acercarse a su comunidad por medio de publicacions y
+              perfiles actualizados.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bar background-pentagon no-mb text-md-center">
+    <div class="container">
+      <div class="heading text-center">
+        <h2>Testimonios</h2>
+      </div>
+      <p class="lead">We have worked with many clients and we always like to hear they come out from the cooperation
+        happy and satisfied. Have a look what our clients said about us.</p>
+      <!-- Carousel Start-->
+      <ul class="owl-carousel testimonials list-unstyled equal-height">
+        <li class="item">
+          <div class="testimonial d-flex flex-wrap">
+            <div class="text">
+              <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into
+                a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his
+                brown belly, slightly domed and divided by arches into stiff sections.</p>
+            </div>
+            <div class="bottom d-flex align-items-center justify-content-between align-self-end">
+              <div class="icon"><i class="fa fa-quote-left"></i></div>
+              <div class="testimonial-info d-flex">
+                <div class="title">
+                  <h5>John McIntyre</h5>
+                  <p>CEO, TransTech</p>
+                </div>
+                <div class="avatar"><img alt="" src="assets/img/man.png" class="img-fluid"></div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="item">
+          <div class="testimonial d-flex flex-wrap">
+            <div class="text">
+              <p>The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs,
+                pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's
+                happened to me? " he thought. It wasn't a dream.</p>
+            </div>
+            <div class="bottom d-flex align-items-center justify-content-between align-self-end">
+              <div class="icon"><i class="fa fa-quote-left"></i></div>
+              <div class="testimonial-info d-flex">
+                <div class="title">
+                  <h5>John McIntyre</h5>
+                  <p>CEO, TransTech</p>
+                </div>
+                <div class="avatar"><img alt="" src="assets/img/man.png" class="img-fluid"></div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="item">
+          <div class="testimonial d-flex flex-wrap">
+            <div class="text">
+              <p>His room, a proper human room although a little too small, lay peacefully between its four familiar
+                walls.</p>
+              <p>A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and
+                above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a
+                nice, gilded frame.</p>
+            </div>
+            <div class="bottom d-flex align-items-center justify-content-between align-self-end">
+              <div class="icon"><i class="fa fa-quote-left"></i></div>
+              <div class="testimonial-info d-flex">
+                <div class="title">
+                  <h5>John McIntyre</h5>
+                  <p>CEO, TransTech</p>
+                </div>
+                <div class="avatar"><img alt="" src="assets/img/man.png" class="img-fluid"></div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="item">
+          <div class="testimonial d-flex flex-wrap">
+            <div class="text">
+              <p>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that
+                covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the
+                dull weather. Drops of rain could be heard hitting the pane, which made him feel quite sad.</p>
+            </div>
+            <div class="bottom d-flex align-items-center justify-content-between align-self-end">
+              <div class="icon"><i class="fa fa-quote-left"></i></div>
+              <div class="testimonial-info d-flex">
+                <div class="title">
+                  <h5>John McIntyre</h5>
+                  <p>CEO, TransTech</p>
+                </div>
+                <div class="avatar"><img alt="" src="assets/img/man.png" class="img-fluid"></div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="item">
+          <div class="testimonial d-flex flex-wrap">
+            <div class="text">
+              <p>It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that
+                covered the whole of her lower arm towards the viewer. Gregor then turned to look out the window at the
+                dull weather. Drops of rain could be heard hitting the pane, which made him feel quite sad. Gregor then
+                turned to look out the window at the dull weather. Drops of rain could be heard hitting the pane, which
+                made him feel quite sad.</p>
+            </div>
+            <div class="bottom d-flex align-items-center justify-content-between align-self-end">
+              <div class="icon"><i class="fa fa-quote-left"></i></div>
+              <div class="testimonial-info d-flex">
+                <div class="title">
+                  <h5>John McIntyre</h5>
+                  <p>CEO, TransTech</p>
+                </div>
+                <div class="avatar"><img alt="" src="assets/img/man.png" class="img-fluid"></div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <!-- Carousel End-->
+    </div>
+  </section>
+  <section style="background: url(assets/img/fixed-background-2.jpg) center top no-repeat; background-size: cover;"
+    class="bar no-mb color-white text-center bg-fixed relative-positioned">
+    <div class="dark-mask"></div>
+    <div class="container">
+      <div class="icon icon-outlined icon-lg"><i class="fa fa-file-code-o"></i></div>
+      <h3 class="text-uppercase">Do you want to see more?</h3>
+      <p class="lead">We have prepared for you more than 40 different HTML pages, including 5 variations of homepage.
+      </p>
+      <p class="text-center">
+        <a href="index2.html" class="btn btn-template-outlined-white btn-lg">See another homepage</a>
+      </p>
+    </div>
+  </section>
+  <section class="bg-white bar" id="nosotros">
+    <div class="container">
+      <div class="heading text-center">
+        <h2>Docentes <span>UNP</span></h2>
+      </div>
+      <p class="lead">Somos una empresa de desarrollo de sistemas en la región Piura, utilizando las últimas tecnologías
+        de informática, ofreciendo a las empresas sistemas de mayor calidad y atracción, para su producción y uso.
+        <strong>Página Geektic:</strong> <a href="www.geekticsoluciones.com">www.geekticsoluciones.com</a>
+      </p>
+      <div class="row">
+        <div class="col-lg-3">
+          <div class="home-blog-post">
+            <div class="image"><img src="assets/img/welcome/aplicacion-web.png" alt="..." class="img-fluid">
+              <div class="overlay d-flex align-items-center justify-content-center">
+                <a href="#" class="btn btn-template-outlined-white"><i class="fa fa-chain"> </i> Read More</a>
+              </div>
+            </div>
+            <div class="text">
+              <h4><a href="#">Desarrollo Web</a></h4>
+              <p class="intro">Geektic brinda brinda el desarrollo de aplicaciones web acorde a las necesidades y
+                requerimientos de las empresas.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="home-blog-post">
+            <div class="image"><img src="assets/img/welcome/responsive-design.jpg" alt="..." class="img-fluid">
+              <div class="overlay d-flex align-items-center justify-content-center"><a href="#"
+                  class="btn btn-template-outlined-white"><i class="fa fa-chain"> </i> Read More</a></div>
+            </div>
+            <div class="text">
+              <h4><a href="#">Web Responsive</a></h4>
+              <p class="intro d-flex justify-content-start">Se adapta la aparencia de las páginas web al dispositivo que
+                se está utilizando para visitarlas.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="home-blog-post">
+            <div class="image"><img src="assets/img/welcome/mantenimiento-web.png" alt="..." class="img-fluid">
+              <div class="overlay d-flex align-items-center justify-content-center"><a href="#"
+                  class="btn btn-template-outlined-white"><i class="fa fa-chain"> </i> Read More</a></div>
+            </div>
+            <div class="text">
+              <h4><a href="#">Mantenimiento</a></h4>
+              <p class="intro">El mantenimiento de las aplicaciones web se da acuerdo a las necesidades del cliente si
+                existe algun cambio o actualizaciones del sistema.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="home-blog-post">
+            <div class="image"><img src="assets/img/welcome/comunicacion2.jpg" alt="..." class="img-fluid">
+              <div class="overlay d-flex align-items-center justify-content-center"><a href="#"
+                  class="btn btn-template-outlined-white"><i class="fa fa-chain"> </i> Read More</a></div>
+            </div>
+            <div class="text">
+              <h4><a href="#">Consultas </a></h4>
+              <p class="intro">El cliente cualquier consulta o sugerencia del sistema siempre se estará en constante
+                comunicación, con el fin de establecer un mejor servicio con nuestros clientes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bar bg-gray">
+    <div class="container">
+      <div class="heading text-center">
+        <h2>Nuestros Docentes</h2>
+      </div>
+      <ul class="list-unstyled owl-carousel customers no-mb">
+        <li class="item"><img src="assets/img/customer-1.png" alt="" class="img-fluid"></li>
+        <li class="item"><img src="assets/img/customer-2.png" alt="" class="img-fluid"></li>
+        <li class="item"><img src="assets/img/customer-3.png" alt="" class="img-fluid"></li>
+        <li class="item"><img src="assets/img/customer-4.png" alt="" class="img-fluid"></li>
+        <li class="item"><img src="assets/img/customer-5.png" alt="" class="img-fluid"></li>
+        <li class="item"><img src="assets/img/customer-6.png" alt="" class="img-fluid"></li>
+      </ul>
+    </div>
+  </section>
+  <!-- GET IT-->
+  <div class="get-it">
+    <!-- here register -->
+    <div class="form-group" id="registrarse"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 text-center p-3">
+          <h3>¿Quieres ser parte de la red?</h3>
+        </div>
+        <div class="col-lg-4 text-center p-3">
+          <a href="#" class="btn btn-template-outlined-white"> Solicitar suscripción</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- registrate -->
+  <!-- FOOTER -->
+  <footer class="main-footer" id="contacto">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <h4 class="h6">Acerca de nosotros</h4>
+          <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+          <hr>
+          <h4 class="h6">Join Our Monthly Newsletter</h4>
+          <form>
+            <div class="input-group">
+              <input type="text" class="form-control">
+              <div class="input-group-append">
+                <button type="button" class="btn btn-secondary"><i class="fa fa-send"></i></button>
+              </div>
+            </div>
+          </form>
+          <hr class="d-block d-lg-none">
+        </div>
+        <div class="col-lg-3">
+          <h4 class="h6">Blog</h4>
+          <ul class="list-unstyled footer-blog-list">
+            <li class="d-flex align-items-center">
+              <div class="image"><img src="assets/img/detailsquare.jpg" alt="..." class="img-fluid"></div>
+              <div class="text">
+                <h5 class="mb-0"> <a href="post.html">Blog post name</a></h5>
+              </div>
+            </li>
+            <li class="d-flex align-items-center">
+              <div class="image"><img src="assets/img/detailsquare.jpg" alt="..." class="img-fluid"></div>
+              <div class="text">
+                <h5 class="mb-0"> <a href="post.html">Blog post name</a></h5>
+              </div>
+            </li>
+            <li class="d-flex align-items-center">
+              <div class="image"><img src="assets/img/detailsquare.jpg" alt="..." class="img-fluid"></div>
+              <div class="text">
+                <h5 class="mb-0"> <a href="post.html">Very very long blog post name</a></h5>
+              </div>
+            </li>
+          </ul>
+          <hr class="d-block d-lg-none">
+        </div>
+        <div class="col-lg-3">
+          <h4 class="h6">Contact</h4>
+          <p class="text-uppercase">
+            <strong>Universal Ltd.</strong>
+            <br>13/25 New Avenue
+            <br>Newtown upon River
+            <br>45Y 73J
+            <br>England
+            <br>
+            <strong>Great Britain</strong>
+          </p>
+          <a href="contact.html" class="btn btn-template-main">Go to contact page</a>
+          <hr class="d-block d-lg-none">
+        </div>
+        <div class="col-lg-3">
+          <ul class="list-inline photo-stream">
+            <li class="list-inline-item"><a href="#"><img src="assets/img/detailsquare.jpg" alt="..."
+                  class="img-fluid"></a></li>
+            <li class="list-inline-item"><a href="#"><img src="assets/img/detailsquare2.jpg" alt="..."
+                  class="img-fluid"></a></li>
+            <li class="list-inline-item"><a href="#"><img src="assets/img/detailsquare3.jpg" alt="..."
+                  class="img-fluid"></a></li>
+            <li class="list-inline-item"><a href="#"><img src="assets/img/detailsquare3.jpg" alt="..."
+                  class="img-fluid"></a></li>
+            <li class="list-inline-item"><a href="#"><img src="assets/img/detailsquare2.jpg" alt="..."
+                  class="img-fluid"></a></li>
+            <li class="list-inline-item"><a href="#"><img src="assets/img/detailsquare.jpg" alt="..."
+                  class="img-fluid"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="copyrights">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 text-center-md">
+            <p>&copy; 2019. UNP / Informática 2012</p>
+          </div>
+          <div class="col-lg-8 text-right text-center-md">
+            <p>Diseñado por <a href="https://bootstrapious.com/free-templates">Mario Ramos Duque </a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+<div>
+  <router-outlet></router-outlet>
+</div>
