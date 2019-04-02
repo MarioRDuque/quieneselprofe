@@ -35,9 +35,7 @@ export class LoginComponent implements OnInit {
       this.authService.getIsLogged$().subscribe(respuesta => {
         this.isLogged = respuesta;
         if (this.isLogged) {
-          this.router.navigate(["modulos"]).then(() => {
-            location.reload();
-          });
+          this.router.navigate(["modulos"]);
         } else {
           this.cargando = false;
         }

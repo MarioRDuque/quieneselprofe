@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ScrollToService, ScrollToConfigOptions } from '@nicky-lenaers/ngx-scroll-to';
-import { LoginComponent } from '../login/login.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-publico',
@@ -13,7 +13,8 @@ export class PublicoComponent implements OnInit {
   images: Array<string> = new Array(3);
   constructor(
     public modalService: NgbModal,
-    private _scrollToService: ScrollToService
+    private _scrollToService: ScrollToService,
+    private router: Router
   ) {
     this.images[0] = '../../../../assets/img/welcome/carrucel-1.png';
     this.images[1] = '../../../../assets/img/welcome/carrucel-2.png';
@@ -25,10 +26,7 @@ export class PublicoComponent implements OnInit {
   }
 
   abrirLogin(): void {
-    const modalRef = this.modalService.open(LoginComponent, {size: 'sm', keyboard: false});
-    modalRef.result.then((result) => {
-    }, (reason) => {
-    });
+    this.router.navigate(["modulos"]);
   }
 
   public triggerScrollTo(destino: string) {
