@@ -14,7 +14,8 @@
             </ul>
             <div class="login cursor-pointer">
               <a (click)="abrirLogin()" class="login-btn">
-                <i class="fa fa-sign-in"></i><span class="d-none d-md-inline-block">Iniciar sesion</span>
+                <i class="fa fa-sign-in"></i><span class="d-none d-md-inline-block">Iniciar </span>
+                
               </a>
               <a href="#registrarse" class="signup-btn" (click)="triggerScrollTo('registrarse')" data-toggle="dropdown">
                 <i class="fa fa-user"></i><span class="d-none d-md-inline-block a"> Registrarse</span>
@@ -90,56 +91,20 @@
       <div class="home-carousel">
         <div class="dark-mask mask-primary"></div>
         <ngb-carousel *ngIf="images">
-          <ng-template ngbSlide>
+          <ng-template ngbSlide *ngFor="let imagen of images">
             <div class="item">
               <div class="row">
-                <div class="col-md-5 text-right">
+                <div class="{{imagen.claseText}}">
                   <br><br>
-                  <h1>Sistema de Interactividad Educativa Universitaria</h1>
-                  <p>crea tu perfil y hazle saber a tu comunidad la importancia de estar conectados.</p>
+                  <h1>{{imagen.titulo}}</h1>
+                  <p>{{imagen.descripcion}}</p>
                 </div>
-                <div class="col-md-7 text-center"><img [src]="images[0]" alt="Random first slide"
+                <div class="{{imagen.claseImagen}}"><img [src]="imagen.imagen" alt="Random first slide"
                     style="height: 350px!important;" class="img-fluid"></div>
               </div>
             </div>
           </ng-template>
-          <ng-template ngbSlide>
-            <div class="item">
-              <div class="row">
-                <div class="col-md-7 text-center"><img [src]="images[1]" alt="Random second slide"
-                    style="height: 350px!important;" class="img-fluid">
-                </div>
-                <div class="col-md-5 text-left">
-                  <br><br>
-                  <h1>Perfil docente actualizado</h1>
-                  <p>
-                    Comparte el mejor contenido de materias online.
-                    Interactivo y fácil acceso al sistema.
-                    Gestiona desde cualquier dispositivo.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </ng-template>
-          <ng-template ngbSlide>
-            <div class="item">
-              <div class="row">
-                <div class="col-md-5 text-right">
-                  <br><br>
-                  <h1>Lo que aquí encontrarás</h1>
-                  <p>
-                    Ubica a tu docente de manera directa entrando a su perfil.
-                    Adelanta temas de estudio.
-                    Sugiere post.
-                    Postea y haste fan.
-                  </p>
-                </div>
-                <div class="col-md-7 text-center"><img [src]="images[2]" alt="Random third slide"
-                    style="height: 350px!important;">
-                </div>
-              </div>
-            </div>
-          </ng-template>
+         
         </ngb-carousel>
       </div>
     </div>
@@ -396,12 +361,13 @@
     </div>
   </section>
   <section class="bar bg-gray">
-    <div class="container">
+    <div class="container ">
       <div class="heading text-center">
         <h2>Nuestros Docentes</h2>
       </div>
-      <ul class="list-unstyled owl-carousel customers no-mb">
-        <li class="item"><img src="assets/img/customer-1.png" alt="" class="img-fluid"></li>
+      <!--fue agregado card-columns -->
+      <ul class="list-unstyled owl-carousel customers no-mb card-columns">
+        <li class="item "><img src="assets/img/customer-1.png" alt="" class="img-fluid"></li>
         <li class="item"><img src="assets/img/customer-2.png" alt="" class="img-fluid"></li>
         <li class="item"><img src="assets/img/customer-3.png" alt="" class="img-fluid"></li>
         <li class="item"><img src="assets/img/customer-4.png" alt="" class="img-fluid"></li>
@@ -410,6 +376,8 @@
       </ul>
     </div>
   </section>
+
+
   <!-- GET IT-->
   <div class="get-it">
     <!-- here register -->
