@@ -5,4 +5,3 @@ export class Carousel{
 	claseImagen: string ='';
 	claseText: string ='';
 }
-
