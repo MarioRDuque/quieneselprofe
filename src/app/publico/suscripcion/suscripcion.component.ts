@@ -5,6 +5,7 @@ import { Suscriptor } from 'src/app/entidades/suscriptor';
 import { LS } from 'src/app/constantes/app-constants';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { ApiRequestService } from 'src/app/services/api-request.service';
 
 @Component({
   selector: 'app-suscripcion',
@@ -13,39 +14,42 @@ import { Router } from '@angular/router';
 })
 export class SuscripcionComponent implements OnInit {
 
+  public suscriptor: Suscriptor = new Suscriptor();
+  public resultadoApi: any = "";
 
-  suscriptor: Suscriptor = new Suscriptor();
   constructor(
     private utilService: UtilService,
     private toastr: ToastrService,
-    private navegar: Router
+    private navegar: Router,
+    private api: ApiRequestService
   ) { }
 
   ngOnInit() {
   }
 
-  enviar(form: NgForm){
+  enviar(form: NgForm) {
+    this.api.get("suscripciones/suscripcion").
+      then(data => {
+        this.resultadoApi = data;
+      }).catch(err => {
+        console.log(err);
+      })
+
     let formularioTocado = this.utilService.establecerFormularioTocado(form);
     if (formularioTocado && form && form.valid) {
-      
+
     } else {
       this.toastr.error(LS.MSJ_CAMPOS_INVALIDOS, LS.MSJ_TITULO_INVALIDOS);
     }
   }
 
-  limpiar(){
-
-    this.suscriptor.nombre="";
-    this.suscriptor.apellido="";
-    this.suscriptor.correo="";
-    this.suscriptor.direccion="";
-    this.suscriptor.facultad="";
-    this.suscriptor.password="";
-    this.suscriptor.codigoDoc="";
-    this.toastr.warning("Los campos estan en blanco y sin valor","CLEAN")
+  limpiar() {
+    this.suscriptor = new Suscriptor();
+    this.toastr.warning("Los campos estan en blanco y sin valor", "CLEAN")
   }
-  salir(){
-    this.toastr.info("Usted ha cancelado la suscripción","CANCELAR");
+
+  salir() {
+    this.toastr.info("Usted ha cancelado la suscripción", "CANCELAR");
     this.navegar.navigate(['/docentes']);
   }
 

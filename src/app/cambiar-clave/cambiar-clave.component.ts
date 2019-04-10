@@ -37,7 +37,7 @@ export class CambiarClaveComponent implements OnInit {
         clave: this.usuario.nueva
 
       }
-      this.api.post("todocompuWS/sistemaWebController/modificarPasswordSisUsuario", parametros, '')
+      this.api.post("todocompuWS/sistemaWebController/modificarPasswordSisUsuario", parametros)
         .then(respuesta => {
           if (respuesta && respuesta.extraInfo) {
             this.usuario.usuario = this.authService.getUserName();

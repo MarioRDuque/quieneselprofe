@@ -38,7 +38,7 @@ export class AuthService {
             'username': username,
             'password': password
         };
-        this.apiRequest.login('session', bodyData, null)
+        this.apiRequest.login('session', bodyData)
             .then(
                 jsonResp => {
                     if (jsonResp && jsonResp.item && jsonResp.estadoOperacion === "EXITO") {

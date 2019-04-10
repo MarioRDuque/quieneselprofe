@@ -28,7 +28,8 @@
                 </div>
             </div>
             <div class="col-md-8 mx-auto">
-                <form #suscripcionForm="ngForm" name="suscripcionForm" (ngSubmit)="enviar(suscripcionForm)">
+                <form #suscripcionForm="ngForm" name="suscripcionForm" (ngSubmit)="enviar(suscripcionForm)"
+                    autocomplete="off">
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
@@ -40,36 +41,42 @@
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="lastname">Apellidos</label>
-                                <input id="lastname" [(ngModel)]="suscriptor.apellido" name="apellidos" type="text" class="form-control" required>
+                                <input id="lastname" [(ngModel)]="suscriptor.apellido" name="apellidos" type="text"
+                                    class="form-control" required>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="email">Correo</label>
-                                <input id="email" [(ngModel)]="suscriptor.correo" name="correo" type="text" class="form-control" required>
+                                <input id="email" [(ngModel)]="suscriptor.correo" name="correo" type="text"
+                                    class="form-control" required>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="subject">Dirección</label>
-                                <input id="subject" [(ngModel)]="suscriptor.direccion" name="direccion" type="text" class="form-control" required>
+                                <input id="subject" [(ngModel)]="suscriptor.direccion" name="direccion" type="text"
+                                    class="form-control" required>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="codigoDoc">Código de docente</label>
-                                <input id="codigoDoc" [(ngModel)]="suscriptor.codigoDoc" name="codigoDoc" type="text" class="form-control" required>
+                                <input id="codigoDoc" [(ngModel)]="suscriptor.codigoDoc" name="codigoDoc" type="text"
+                                    class="form-control" required>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="passDoc">Contraseña</label>
-                                <input id="passDoc" type="password" name="password" [(ngModel)]="suscriptor.password" class="form-control" required placeholder="Esta es solo una contraseña de prueba">
+                                <input id="passDoc" type="password" name="password" [(ngModel)]="suscriptor.password"
+                                    class="form-control" required placeholder="Esta es solo una contraseña de prueba">
                             </div>
                         </div>
                         <div class=" col-sm-6">
                             <label class="my-1 mr-2" for="comboFac">Facultad</label>
-                            <select class="form-control my-1 mr-sm-2 " name="facultad" [(ngModel)]="suscriptor.facultad" id="comboFac" required>
+                            <select class="form-control my-1 mr-sm-2 " name="facultad" [(ngModel)]="suscriptor.facultad"
+                                id="comboFac" required>
                                 <option value="1">Agronomía</option>
                                 <option value="2">Civil</option>
                                 <option value="3">Derecho</option>
@@ -90,13 +97,14 @@
                                 Solicitar</button>
                         </div>
                         <div class="col-sm-4 text-center">
-                            <button type="button" (click)="limpiar()" class="btn  btn-outline-success" [disabled]="cargando"><i
-                                    class="fa fa-envelope-o"></i>
+                            <button type="button" (click)="limpiar()" class="btn  btn-outline-success"
+                                [disabled]="cargando"><i class="fa fa-envelope-o"></i>
                                 Limpiar</button>
                         </div>
 
                         <div class="col-sm-4 text-center">
-                            <button type="button" (click)="salir()" class="btn btn-outline-danger"><i class="fa fa-envelope-o"></i>
+                            <button type="button" (click)="salir()" class="btn btn-outline-danger"><i
+                                    class="fa fa-envelope-o"></i>
                                 Regresar</button>
                         </div>
                     </div>
@@ -105,3 +113,5 @@
         </div>
     </section>
 </div>
+
+<h1>{{resultadoApi}}</h1>
