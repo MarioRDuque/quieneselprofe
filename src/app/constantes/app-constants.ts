@@ -2681,5 +2681,7 @@ export class LS {
   //SCANNER
   static LISTA_IMAGENES_COMPRA = [];
   static TIPO_IMAGEN = null;
+// constantes formulario de suscripcion:
+
 
 }

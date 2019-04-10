@@ -64,7 +64,7 @@
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="passDoc">Contraseña</label>
-                                <input id="passDoc" type="text" name="password" [(ngModel)]="suscriptor.password" class="form-control" required>
+                                <input id="passDoc" type="password" name="password" [(ngModel)]="suscriptor.password" class="form-control" required placeholder="Esta es solo una contraseña de prueba">
                             </div>
                         </div>
                         <div class=" col-sm-6">
@@ -84,15 +84,20 @@
 
                     </div>
                     <div class=" row">
-                        <div class="col-sm-6 text-center">
+                        <div class="col-sm-4 text-center">
                             <button type="submit" class="btn btn-template-outlined" [disabled]="cargando"><i
                                     class="fa fa-envelope-o"></i>
                                 Solicitar</button>
                         </div>
-
-                        <div class="col-sm-6 text-center">
-                            <button class="btn btn-template-outlined"><i class="fa fa-envelope-o"></i>
+                        <div class="col-sm-4 text-center">
+                            <button type="button" (click)="limpiar()" class="btn  btn-outline-success" [disabled]="cargando"><i
+                                    class="fa fa-envelope-o"></i>
                                 Limpiar</button>
+                        </div>
+
+                        <div class="col-sm-4 text-center">
+                            <button type="button" (click)="salir()" class="btn btn-outline-danger"><i class="fa fa-envelope-o"></i>
+                                Regresar</button>
                         </div>
                     </div>
                 </form>
