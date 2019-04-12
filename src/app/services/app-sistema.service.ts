@@ -51,7 +51,7 @@ export class AppSistemaService {
         index = element.submenus.findIndex(item => item.id === url);
       }
     });
-    return index != -1;
+    return index !== -1;
   }
 
   getFechaActual(contexto, empresaSelect): Promise<any> {
