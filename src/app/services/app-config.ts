@@ -8,7 +8,7 @@ export class AppConfig {
 
     //public baseApiPath: string = "https://tws.todocompu.com.ec:1443/Obinte/";
     public baseApiPath: string = "http://localhost:8091/";
-    
+
     constructor() {
 
     }

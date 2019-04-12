@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { UtilService } from 'src/app/services/util.service';
-import { Suscriptor } from 'src/app/entidades/suscriptor';
-import { LS } from 'src/app/constantes/app-constants';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
-import { ApiRequestService } from 'src/app/services/api-request.service';
+import { Suscriptor } from '../../entidades/suscriptor';
+import { UtilService } from '../../services/util.service';
+import { ApiRequestService } from '../../services/api-request.service';
+import { LS } from '../../constantes/app-constants';
 
 @Component({
   selector: 'app-suscripcion',
@@ -28,18 +28,18 @@ export class SuscripcionComponent implements OnInit {
   }
 
   enviar(form: NgForm) {
-    
+
 
     let formularioTocado = this.utilService.establecerFormularioTocado(form);
     if (formularioTocado && form && form.valid) {
-      this.api.post("suscripciones/guardar",this.suscriptor).
-      then(data => {
-        this.resultadoApi = data;
-        console.log(this.resultadoApi);
-        this.toastr.success(this.resultadoApi.operacionMensaje,this.resultadoApi.estadoOperacion);
-      }).catch(err => {
-        console.log(err);
-      });
+      this.api.post("suscripciones/guardar", this.suscriptor).
+        then(data => {
+          this.resultadoApi = data;
+          console.log(this.resultadoApi);
+          this.toastr.success(this.resultadoApi.operacionMensaje, this.resultadoApi.estadoOperacion);
+        }).catch(err => {
+          console.log(err);
+        });
     } else {
       this.toastr.error(LS.MSJ_CAMPOS_INVALIDOS, LS.MSJ_TITULO_INVALIDOS);
     }

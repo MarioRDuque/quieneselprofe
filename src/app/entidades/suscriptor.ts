@@ -1,9 +1,9 @@
-export class Suscriptor{
-	nombre : string = '';
+export class Suscriptor {
+	nombre: string = '';
 	apellido: string = '';
-	correo: string ='';
-	direccion: string ='';
-    codDocente: string ='';
-    password: string ='';
-    facultad: string ='';
+	correo: string = '';
+	direccion: string = '';
+	codDocente: string = '';
+	password: string = '';
+	facultad: string = '';
 }

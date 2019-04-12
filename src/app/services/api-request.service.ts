@@ -35,7 +35,7 @@ export class ApiRequestService {
             headers: this.appendAuthHeader()
         };
         if (urlParam) {
-            options['params'] = urlParam ;
+            options['params'] = urlParam;
         }
         if (body) {
             options['body'] = JSON.stringify(body);
@@ -74,7 +74,7 @@ export class ApiRequestService {
     login(url: string, body: Object): Promise<any> {
         localStorage.setItem(LS.KEY_TIEMPO_SESION, "" + new Date().getTime());
         let requestOptions = this.getRequestOptions(undefined, body);
-        return this.http.request('POST',this.appConfig.baseApiPath + url, requestOptions)
+        return this.http.request('POST', this.appConfig.baseApiPath + url, requestOptions)
             .toPromise()
             .then(resp => resp)
             .catch(err => this.handleError(err));
@@ -114,7 +114,7 @@ export class ApiRequestService {
 
     hayTiempoSession() {
         return true;
-        if (localStorage.getItem("locationPathName") != location.pathname) {
+        if (localStorage.getItem("locationPathName") !== location.pathname) {
             console.log("diferentes");
             return false;
         }

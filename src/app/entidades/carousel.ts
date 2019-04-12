@@ -1,7 +1,7 @@
-export class Carousel{
-	imagen : string = '';
-	descripcion: string = '';
-	titulo: string ='';
-	claseImagen: string ='';
-	claseText: string ='';
+export class Carousel {
+    public imagen: string = '';
+	public descripcion: string = '';
+	titulo: string = '';
+	claseImagen: string = '';
+	claseText: string = '';
 }

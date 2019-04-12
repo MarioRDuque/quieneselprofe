@@ -30,13 +30,12 @@ export class CambiarClaveComponent implements OnInit {
   }
 
   cambiarClave() {
-    if (this.usuario.nueva && this.usuario.confirmar && this.usuario.nueva == this.usuario.confirmar) {
+    if (this.usuario.nueva && this.usuario.confirmar && this.usuario.nueva === this.usuario.confirmar) {
       this.cargando = true;
       let parametros = {
         codigoUser: this.authService.getCodigoUser(),
         clave: this.usuario.nueva
-
-      }
+      };
       this.api.post("todocompuWS/sistemaWebController/modificarPasswordSisUsuario", parametros)
         .then(respuesta => {
           if (respuesta && respuesta.extraInfo) {
