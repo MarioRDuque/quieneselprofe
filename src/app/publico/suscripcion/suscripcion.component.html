@@ -62,7 +62,7 @@
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="codigoDoc">Código de docente</label>
-                                <input id="codigoDoc" [(ngModel)]="suscriptor.codigoDoc" name="codigoDoc" type="text"
+                                <input id="codigoDoc" [(ngModel)]="suscriptor.codDocente" name="codigoDoc" type="text"
                                     class="form-control" required>
                             </div>
                         </div>
@@ -77,15 +77,15 @@
                             <label class="my-1 mr-2" for="comboFac">Facultad</label>
                             <select class="form-control my-1 mr-sm-2 " name="facultad" [(ngModel)]="suscriptor.facultad"
                                 id="comboFac" required>
-                                <option value="1">Agronomía</option>
-                                <option value="2">Civil</option>
-                                <option value="3">Derecho</option>
-                                <option value="4">Economía</option>
-                                <option value="5">Educación</option>
-                                <option value="6">Civil</option>
-                                <option value="7">Contabilidad</option>
-                                <option value="8">Medicina</option>
-                                <option value="9">Minas</option>
+                                <option value="Agronomía">Agronomía</option>
+                                <option value="Civil">Civil</option>
+                                <option value="Derecho">Derecho</option>
+                                <option value="Economía">Economía</option>
+                                <option value="Educación">Educación</option>
+                                <option value="Industrial">Industrial</option>
+                                <option value="Contabilidad">Contabilidad</option>
+                                <option value="Medicina">Medicina</option>
+                                <option value="Minas">Minas</option>
                             </select>
                         </div>
 
@@ -114,4 +114,9 @@
     </section>
 </div>
 
-<h1>{{resultadoApi}}</h1>
+<!---h1>{{resultadoApi.estadoOperacion}}</h1>
+<hr>
+<div >
+    <p>{{resultadoApi.operacionMensaje}}</p>
+    <p></p>
+</div>-->

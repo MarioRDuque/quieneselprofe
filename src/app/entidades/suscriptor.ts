@@ -3,7 +3,7 @@ export class Suscriptor{
 	apellido: string = '';
 	correo: string ='';
 	direccion: string ='';
-    codigoDoc: string ='';
+    codDocente: string ='';
     password: string ='';
     facultad: string ='';
 }

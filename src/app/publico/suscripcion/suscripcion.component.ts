@@ -28,16 +28,18 @@ export class SuscripcionComponent implements OnInit {
   }
 
   enviar(form: NgForm) {
-    this.api.get("suscripciones/suscripcion").
-      then(data => {
-        this.resultadoApi = data;
-      }).catch(err => {
-        console.log(err);
-      })
+    
 
     let formularioTocado = this.utilService.establecerFormularioTocado(form);
     if (formularioTocado && form && form.valid) {
-
+      this.api.post("suscripciones/guardar",this.suscriptor).
+      then(data => {
+        this.resultadoApi = data;
+        console.log(this.resultadoApi);
+        this.toastr.success(this.resultadoApi.operacionMensaje,this.resultadoApi.estadoOperacion);
+      }).catch(err => {
+        console.log(err);
+      });
     } else {
       this.toastr.error(LS.MSJ_CAMPOS_INVALIDOS, LS.MSJ_TITULO_INVALIDOS);
     }

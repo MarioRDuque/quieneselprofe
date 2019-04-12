@@ -43,7 +43,6 @@ export class ApiRequestService {
         return options;
     }
 
-    //PARAMETRO EMPRESA ES LA EMPRESA SELECCIONADA PARA REALIZAR LA OPERACION
     get(url: string, urlParams?: HttpParams): Promise<any> {
         if (this.hayTiempoSession()) {
             localStorage.setItem(LS.KEY_TIEMPO_SESION, "" + new Date().getTime());
