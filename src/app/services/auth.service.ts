@@ -74,25 +74,25 @@ export class AuthService {
 
     handleError(error: any, contexto) {
         switch (error.status) {
-          case 401:
-          case 403:
-            this.toastr.warning('No autorizado', 'Aviso');
-            sessionStorage.clear();
-            localStorage.clear();
-            this.router.navigate(['login']);
-            break;
-          case 404:
-            this.toastr.warning('página solicitada no se encuentra', 'Aviso');
-            break;
-          case 0:
-            this.toastr.warning("No hay conexión con el servidor.", 'Aviso');
-            break;
-          default:
-            this.toastr.error(error.message || error, 'Error');
-            break;
+            case 401:
+            case 403:
+                this.toastr.warning('No autorizado', 'Aviso');
+                sessionStorage.clear();
+                localStorage.clear();
+                this.router.navigate(['login']);
+                break;
+            case 404:
+                this.toastr.warning('página solicitada no se encuentra', 'Aviso');
+                break;
+            case 0:
+                this.toastr.warning("No hay conexión con el servidor.", 'Aviso');
+                break;
+            default:
+                this.toastr.error(error.message || error, 'Error');
+                break;
         }
         contexto.cargando = false;
-      }
+    }
 
     getIsLogged$(): Observable<boolean> {
         return this.isLogged$.asObservable();
@@ -105,7 +105,7 @@ export class AuthService {
     cerrarSession(): void {
         localStorage.clear();
         sessionStorage.clear();
-        this.router.navigate(["/login"]);/* ir al backend y caducar token */
+        this.router.navigate(["/login"]); /* ir al backend y caducar token */
     }
 
     getUserName(): string {
@@ -200,7 +200,7 @@ export class AuthService {
         let objJWT = JSON.parse(localStorage.getItem(LS.KEY_DATOS_INICIALES));
         if (objJWT !== null && objJWT.modulos) {
             for (let i = 0; i < objJWT.modulos.length; i++) {
-                if (objJWT.modulos[i].url == url) {
+                if (objJWT.modulos[i].url === url) {
                     return objJWT.modulos[i];
                 }
             }

@@ -10,6 +10,9 @@ import { Error404Component } from './componentesgenerales/error404/error404.comp
 import { ClearMenuResolve } from './services/clearMenu.resolve';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+import { PagesModule } from './modulos/pages/pages.module';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,9 @@ import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    PagesModule,
     ToastNoAnimationModule.forRoot(),
     NgbModule.forRoot(),
     ScrollToModule.forRoot(),
