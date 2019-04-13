@@ -36,15 +36,20 @@ export class SuscripcionComponent implements OnInit {
       this.cargando = true;
       this.api.post("suscripciones/guardar", this.suscriptor).
         then(data => {
-          this.resultadoApi = data;
-          console.log(this.resultadoApi);
-          this.toastr.success(this.resultadoApi.operacionMensaje, this.resultadoApi.estadoOperacion);
-          this.suscriptor = new Suscriptor();
-          this.cargando = false;
+          if (data && data.extraInfo) {
+            this.resultadoApi = data;
+            console.log(this.resultadoApi);
+            this.toastr.success(this.resultadoApi.operacionMensaje, this.resultadoApi.estadoOperacion);
+            this.suscriptor = new Suscriptor();
+            this.cargando = false;
+          } else {
+            this.toastr.warning(data.operacionMensaje, LS.TAG_AVISO);
+            this.cargando = false;
+          }
         }).catch(err => {
           console.log(err);
           this.cargando = false;
-          this.toastr.error("No se pudo establecer la conexion con el servidor consulte con el administrador", ">>ERROR DE CONEXION<<");
+          this.toastr.error(err, LS.TAG_ERROR);
         });
     } else {
       this.toastr.error(LS.MSJ_CAMPOS_INVALIDOS, LS.MSJ_TITULO_INVALIDOS);

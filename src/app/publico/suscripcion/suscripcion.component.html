@@ -26,9 +26,9 @@
                 Regresar</button>
         </div>
     </div>
-    <div class="card main-container">
+    <div class="card main-container pt-4">
         <div class="form-group">
-            <section class="bar pt-0">
+            <section class="bar pt-0 pb-3">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="heading text-center">
@@ -88,28 +88,33 @@
                                     </div>
                                 </div>
                                 <div class=" col-sm-6">
-                                    <label class="my-1 mr-2" for="comboFac">Facultad</label>
-                                    <select class="form-control my-1 mr-sm-2 " name="facultad"
-                                        [(ngModel)]="suscriptor.facultad" id="comboFac" required>
-                                        <option value="Agronomía">Agronomía</option>
-                                        <option value="Civil">Civil</option>
-                                        <option value="Derecho">Derecho</option>
-                                        <option value="Economía">Economía</option>
-                                        <option value="Educación">Educación</option>
-                                        <option value="Industrial">Industrial</option>
-                                        <option value="Contabilidad">Contabilidad</option>
-                                        <option value="Medicina">Medicina</option>
-                                        <option value="Minas">Minas</option>
-                                    </select>
+                                    <div class="form-group">
+                                        <label class="my-1 mr-2" for="comboFac">Facultad</label>
+                                        <select class="form-control my-1 mr-sm-2 " name="facultad"
+                                            [(ngModel)]="suscriptor.facultad" id="comboFac" required>
+                                            <option value="Agronomía">Agronomía</option>
+                                            <option value="Civil">Civil</option>
+                                            <option value="Derecho">Derecho</option>
+                                            <option value="Economía">Economía</option>
+                                            <option value="Educación">Educación</option>
+                                            <option value="Industrial">Industrial</option>
+                                            <option value="Contabilidad">Contabilidad</option>
+                                            <option value="Medicina">Medicina</option>
+                                            <option value="Minas">Minas</option>
+                                        </select>
+                                    </div>
                                 </div>
 
                             </div>
-                            <div class="">
-                                <button type="submit" class="btn btn-success btn-lg btn-block" [disabled]="cargando">Solicitar
+                            <div class="row">
+                                <div class="col-md-12 pl-4 pr-4">
+                                    <button type="submit" class="btn btn-success btn-lg btn-block"
+                                        [disabled]="cargando">Solicitar
                                         <i *ngIf="cargando" class="fa fa-spinner fa-spin"></i>
-                                </button>
-                                <button type="button" (click)="limpiar()"
-                                    class="btn btn-secondary btn-lg btn-block">Limpiar</button>
+                                    </button>
+                                    <button type="button" (click)="limpiar()"
+                                        class="btn btn-secondary btn-lg btn-block">Limpiar</button>
+                                </div>
                             </div>
                         </form>
                     </div>
@@ -118,6 +123,7 @@
         </div>
     </div>
 </div>
+<loading *ngIf="cargando"></loading>
 
 <!--
 
