@@ -30,26 +30,23 @@ export class ApiRequestService {
         return headers;
     }
 
-    getRequestOptions(empresa: string, urlParam?: HttpParams, body?: Object): any {
+    getRequestOptions(urlParam?: HttpParams, body?: Object): any {
         let options = {
             headers: this.appendAuthHeader()
         };
         if (urlParam) {
-            options['params'] = urlParam ;
+            options['params'] = urlParam;
         }
         if (body) {
-            body["sisInfoTO"] = JSON.parse(localStorage.getItem(LS.KEY_SISINFOTO));
-            body["sisInfoTO"] ? body["sisInfoTO"].empresa = empresa : null;
             options['body'] = JSON.stringify(body);
         }
         return options;
     }
 
-    //PARAMETRO EMPRESA ES LA EMPRESA SELECCIONADA PARA REALIZAR LA OPERACION
-    get(url: string, empresa: string, urlParams?: HttpParams): Promise<any> {
+    get(url: string, urlParams?: HttpParams): Promise<any> {
         if (this.hayTiempoSession()) {
             localStorage.setItem(LS.KEY_TIEMPO_SESION, "" + new Date().getTime());
-            let requestOptions = this.getRequestOptions(empresa, urlParams);
+            let requestOptions = this.getRequestOptions(urlParams);
             return this.http.request('GET', this.appConfig.baseApiPath + url, requestOptions)
                 .toPromise()
                 .then(resp => resp)
@@ -60,10 +57,10 @@ export class ApiRequestService {
     }
 
     //PARAMETRO EMPRESA ES LA EMPRESA SELECCIONADA PARA REALIZAR LA OPERACION
-    post(url: string, body: Object, empresa: string): Promise<any> {
+    post(url: string, body: Object): Promise<any> {
         if (this.hayTiempoSession()) {
             localStorage.setItem(LS.KEY_TIEMPO_SESION, "" + new Date().getTime());
-            let requestOptions = this.getRequestOptions(empresa, undefined, body);
+            let requestOptions = this.getRequestOptions(undefined, body);
             return this.http.request('POST', this.appConfig.baseApiPath + url, requestOptions)
                 .toPromise()
                 .then(resp => resp)
@@ -74,20 +71,20 @@ export class ApiRequestService {
     }
 
     //login
-    login(url: string, body: Object, empresa: string): Promise<any> {
+    login(url: string, body: Object): Promise<any> {
         localStorage.setItem(LS.KEY_TIEMPO_SESION, "" + new Date().getTime());
-        let requestOptions = this.getRequestOptions(empresa, undefined, body);
-        return this.http.request('POST',this.appConfig.baseApiPath + url, requestOptions)
+        let requestOptions = this.getRequestOptions(undefined, body);
+        return this.http.request('POST', this.appConfig.baseApiPath + url, requestOptions)
             .toPromise()
             .then(resp => resp)
             .catch(err => this.handleError(err));
     }
 
     //PARAMETRO EMPRESA ES LA EMPRESA SELECCIONADA PARA REALIZAR LA OPERACION
-    put(url: string, body: Object, empresa: string): Promise<any> {
+    put(url: string, body: Object): Promise<any> {
         if (this.hayTiempoSession()) {
             localStorage.setItem(LS.KEY_TIEMPO_SESION, "" + new Date().getTime());
-            let requestOptions = this.getRequestOptions(empresa, undefined, body);
+            let requestOptions = this.getRequestOptions(undefined, body);
             return this.http.request('PUT', this.appConfig.baseApiPath + url, requestOptions)
                 .toPromise()
                 .then(resp => resp)
@@ -98,10 +95,10 @@ export class ApiRequestService {
     }
 
     //PARAMETRO EMPRESA ES LA EMPRESA SELECCIONADA PARA REALIZAR LA OPERACION
-    delete(url: string, empresa: string): Promise<any> {
+    delete(url: string): Promise<any> {
         if (this.hayTiempoSession()) {
             localStorage.setItem(LS.KEY_TIEMPO_SESION, "" + new Date().getTime());
-            let requestOptions = this.getRequestOptions(empresa);
+            let requestOptions = this.getRequestOptions();
             return this.http.request('DELETE', this.appConfig.baseApiPath + url, requestOptions)
                 .toPromise()
                 .then(resp => resp)
@@ -116,7 +113,8 @@ export class ApiRequestService {
     }
 
     hayTiempoSession() {
-        if (localStorage.getItem("locationPathName") != location.pathname) {
+        return true;
+        if (localStorage.getItem("locationPathName") !== location.pathname) {
             console.log("diferentes");
             return false;
         }

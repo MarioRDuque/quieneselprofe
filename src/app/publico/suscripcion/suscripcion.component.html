@@ -1,0 +1,140 @@
+<!-- Top bar-->
+<div class="top-bar">
+    <div class="container">
+        <div class="row d-flex align-items-center">
+            <div class="col-md-6 d-md-block d-none">
+                <p>Hecho por TesistaUNP</p>
+            </div>
+            <div class="col-md-6">
+                <div class="d-flex justify-content-md-end justify-content-between">
+                    <ul class="social-custom list-inline">
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Top bar end-->
+<div class="container main-container">
+    <div>
+        <div class="r">
+            <button type="button" (click)="salir()" class="btn btn-danger"><i class="fa fa-envelope-o"></i>
+                Regresar</button>
+        </div>
+    </div>
+    <div class="card main-container pt-4">
+        <div class="form-group">
+            <section class="bar pt-0 pb-3">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="heading text-center">
+                            <h2>Solicitar Suscripcion</h2>
+                        </div>
+                    </div>
+                    <div class="col-md-8 mx-auto">
+                        <form #suscripcionForm="ngForm" name="suscripcionForm" (ngSubmit)="enviar(suscripcionForm)"
+                            autocomplete="off">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="firstname">Nombre</label>
+                                        <input id="firstname" [(ngModel)]="suscriptor.nombre" name="nombre" required
+                                            type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="lastname">Apellidos</label>
+                                        <input id="lastname" [(ngModel)]="suscriptor.apellido" name="apellidos"
+                                            type="text" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="email">Correo</label>
+                                        <div id="email" class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text" id="btnGroupAddon">@</div>
+                                            </div>
+                                            <input [(ngModel)]="suscriptor.correo" name="correo" type="email"
+                                                class="form-control" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="subject">Dirección</label>
+                                        <input id="subject" [(ngModel)]="suscriptor.direccion" name="direccion"
+                                            type="text" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="codigoDoc">Código de docente</label>
+                                        <input id="codigoDoc" [(ngModel)]="suscriptor.codDocente" name="codigoDoc"
+                                            type="text" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="passDoc">Contraseña</label>
+                                        <input id="passDoc" type="password" name="password"
+                                            [(ngModel)]="suscriptor.password" class="form-control" required
+                                            placeholder="Esta es solo una contraseña de prueba">
+                                    </div>
+                                </div>
+                                <div class=" col-sm-6">
+                                    <div class="form-group">
+                                        <label class="my-1 mr-2" for="comboFac">Facultad</label>
+                                        <select class="form-control my-1 mr-sm-2 " name="facultad"
+                                            [(ngModel)]="suscriptor.facultad" id="comboFac" required>
+                                            <option *ngFor="let facultad of resultadoFacultad"
+                                                value="facultad.idFacultad">{{facultad.nombreFac}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 pl-4 pr-4">
+                                    <button type="submit" class="btn btn-success btn-lg btn-block"
+                                        [disabled]="cargando">Solicitar
+                                        <i *ngIf="cargando" class="fa fa-spinner fa-spin"></i>
+                                    </button>
+                                    <button type="button" (click)="limpiar()"
+                                        class="btn btn-secondary btn-lg btn-block">Limpiar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<loading *ngIf="cargando"></loading>
+
+<!--
+
+    <div class="col-sm-4 text-center">
+                            <button type="submit" class="btn btn-template-outlined" [disabled]="cargando"><i
+                                    class="fa fa-envelope-o"></i>
+                                Solicitar</button>
+                        </div>
+                        <div class="col-sm-4 text-center">
+                            <button type="button"  class="btn  btn-outline-success"
+                                [disabled]="cargando"><i class="fa fa-envelope-o"></i>
+                                Limpiar</button>
+                        </div>
+
+
+                        <div class="col-sm-4 text-center">
+                            <button type="button" (click)="salir()" class="btn btn-outline-danger"><i
+                                    class="fa fa-envelope-o"></i>
+                                Regresar</button>
+                        </div>
+-->

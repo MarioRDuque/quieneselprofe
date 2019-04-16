@@ -31,7 +31,7 @@ export class AppSistemaService {
    * Los correos son separados por ";"
 */
   enviarNotificacionUsuario(parametro, contexto, empresa) {
-    this.api.post("todocompuWS/appWebController/enviarNotificacionCorreo", parametro, empresa)
+    this.api.post("todocompuWS/appWebController/enviarNotificacionCorreo", parametro)
       .then(data => {
         if (data && data.estadoOperacion === LS.KEY_EXITO) {
           this.toastr.success(data.operacionMensaje, LS.TOAST_CORRECTO);
@@ -51,11 +51,11 @@ export class AppSistemaService {
         index = element.submenus.findIndex(item => item.id === url);
       }
     });
-    return index != -1;
+    return index !== -1;
   }
 
   getFechaActual(contexto, empresaSelect): Promise<any> {
-    return this.api.post("todocompuWS/appWebController/getFechaActual", {}, empresaSelect)
+    return this.api.post("todocompuWS/appWebController/getFechaActual", {})
       .then(data => {
         if (data && data.extraInfo) {
           return new Date(data.extraInfo);
@@ -67,7 +67,7 @@ export class AppSistemaService {
   }
 
   obtenerFechaActual(contexto, empresaSelect) {
-    return this.api.post("todocompuWS/appWebController/getFechaActual", {}, empresaSelect)
+    return this.api.post("todocompuWS/appWebController/getFechaActual", {})
       .then(data => {
         if (data && data.extraInfo) {
           contexto.despuesDeObtenerFechaActual(data.extraInfo);
@@ -76,7 +76,7 @@ export class AppSistemaService {
   }
 
   getFechaInicioFinMes(contexto, empresaSelect): Promise<any> {
-    return this.api.post("todocompuWS/appWebController/getFechaInicioFinMes", {}, empresaSelect)
+    return this.api.post("todocompuWS/appWebController/getFechaInicioFinMes", {})
       .then(data => {
         if (data && data.extraInfo && data.extraInfo.length > 1) {
           return [new Date(data.extraInfo[0]), new Date(data.extraInfo[1])];
@@ -88,7 +88,7 @@ export class AppSistemaService {
   }
 
   getFechaInicioActualMes(contexto, empresaSelect): Promise<any> {
-    return this.api.post("todocompuWS/appWebController/getFechaInicioActualMes", {}, empresaSelect)
+    return this.api.post("todocompuWS/appWebController/getFechaInicioActualMes", {})
       .then(data => {
         if (data && data.extraInfo && data.extraInfo.length > 1) {
           return [new Date(data.extraInfo[0]), new Date(data.extraInfo[1])];
@@ -100,7 +100,7 @@ export class AppSistemaService {
   }
 
   obtenerFechaServidor(contexto, empresaSelect) {
-    this.api.post("todocompuWS/appWebController/getFechaActual", {}, empresaSelect)
+    this.api.post("todocompuWS/appWebController/getFechaActual", {})
       .then(data => {
         if (data && data.extraInfo) {
           contexto.despuesDeObtenerFechaServidor(data.extraInfo);

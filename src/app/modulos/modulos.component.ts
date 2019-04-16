@@ -17,10 +17,21 @@ export class ModulosComponent implements OnInit {
 
   public cargando = false;
   public url = "";
+  public filas = 0;
+  public tiempo = 0;
+  public mostrarTodo: boolean = true;
+  public mostrarMenos: boolean = true;
+  public mostrarMenu: boolean = false;
+  public modulos: any = [];
+  public notificaciones: any = [];
+  public menues: Array<any> = [];
+  public caminos: any = [];
+  public isMovil: boolean = true;
+  public innerWidth: number;
 
   cargar(event, url) {
     if (!event.ctrlKey) {
-      if (url != this.url) {
+      if (url !== this.url) {
         this.cargando = true;
       }
       this.url = url;
@@ -36,21 +47,10 @@ export class ModulosComponent implements OnInit {
     this.cargando = false;
   }
 
+  // tslint:disable-next-line:use-life-cycle-interface
   ngOnDestroy() {
     this.cargando = false;
   }
-
-  public filas = 0;
-  public tiempo = 0;
-  public mostrarTodo: boolean = true;
-  public mostrarMenos: boolean = true;
-  public mostrarMenu: boolean = false;
-  public modulos: any = [];
-  public notificaciones: any = [];
-  public menues: Array<any> = [];
-  public caminos: any = [];
-  public isMovil: boolean = true;
-  public innerWidth: number;
 
   constructor(
     public auth: AuthService,
@@ -103,8 +103,7 @@ export class ModulosComponent implements OnInit {
       this.mostrarTodo = !this.mostrarTodo;
       if (this.mostrarTodo) {
         document.body.classList.add('sidebar-lg-show');
-      }
-      else {
+      } else {
         document.body.classList.remove('sidebar-lg-show');
       }
       return false;
@@ -192,7 +191,7 @@ export class ModulosComponent implements OnInit {
 
   /**
 * Actualiza el valor de la pantalla
-* @param event 
+* @param event
 */
   @HostListener('window:resize', ['$event'])
   onResize() {

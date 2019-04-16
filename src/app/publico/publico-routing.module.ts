@@ -7,6 +7,11 @@ const routesPublico: Routes = [
     path: '',
     component: PublicoComponent,
     runGuardsAndResolvers: 'always'
+  },
+  {
+    path: 'suscripcion',
+    loadChildren: './suscripcion/suscripcion.module#SuscripcionModule',
+    runGuardsAndResolvers: 'always'
   }
 ];
 

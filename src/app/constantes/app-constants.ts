@@ -17,7 +17,7 @@ export class LS {
   public static KEY_EXITO = "EXITO";
   public static KEY_ERROR = "ERROR";
   public static KEY_ADVERTENCIA = "ADVERTENCIA";
-  public static KEY_KARDEX_PROMEDIO = "BIENES"
+  public static KEY_KARDEX_PROMEDIO = "BIENES";
   /*Atajos */
   public static ATAJO_OCULTAR_MENU = 'alt+h';
   public static ATAJO_MENU_ARCHIVO = 'alt+a';
@@ -416,7 +416,7 @@ export class LS {
   static MSJ_PREGUNTA_ANULAR_TRANSFERENCIA = 'Se anulará la transferencia';
   static MSJ_GUARDAR_COMO_PENDIENTE = 'El contable se marcó como PENDIENTE';
   static MSJ_TITULO_INVALIDOS = 'Datos inválidos';
-  static MSJ_NO_EXISTE_SUFICIENTE_INFORMACION_PARA_GENERAR_CONTABLE = "No existe suficiente información para generar contable."
+  static MSJ_NO_EXISTE_SUFICIENTE_INFORMACION_PARA_GENERAR_CONTABLE = "No existe suficiente información para generar contable.";
   static MSJ_COBRANDO_FACTURA_CON_FECHA_ANTERIOR = 'Está cobrando una factura con una fecha anterior.';
   static MSJ_FECHAS_INVALIDOS = 'Las fechas no son válidas.';
   static MSJ_INFO_CONFIGURAR_PRECIOS = 'Complete información para las etiquetas';
@@ -549,8 +549,8 @@ export class LS {
   static MSJ_CEDULO_REPETIDA = 'Cédula repetida';
   static MSJ_LLENE_CAMPO_VENTAS_O_COMPRAS_COSTO = 'Es necesario que llene el campo Ventas, Compras o Costo automático.';
   static MSJ_INGRESE_DATOS_DETALLE = 'Ingrese datos válidos en el detalle';
-  static MSJ_NOTIFICAR_PROVEEDOR = 'Ingrese el email del proveedor para enviar la notificación.'
-  static MSJ_INGRESE_MOTIVO_ANULACION = 'Ingrese motivo de anulación.'
+  static MSJ_NOTIFICAR_PROVEEDOR = 'Ingrese el email del proveedor para enviar la notificación.';
+  static MSJ_INGRESE_MOTIVO_ANULACION = 'Ingrese motivo de anulación.';
   static MSJ_ESTABLECER_CONFIGURACION_PEDIDO = 'Para registrar la orden de pedido establezca la configuración desde el menú Archivo > Configuración de pedido';
   static MSJ_NO_REPORTE_ERRORES = "El reporte no existe o tiene errores";
   static MSJ_ARCHIVO_NO_VALIDO = 'Tipo de archivo no válido';
@@ -607,7 +607,7 @@ export class LS {
   static MSJ_CONTABILIZAR_TODO_PROCESO_DIRECTO = "No se encontraron datos para IPP directo";
   static MSJ_CONTABILIZAR_TODO_PROCESO_INDIRECTO = "No se encontraron datos para IPP indirecto";
   static MSJ_CONTABILIZAR_TODO_PROCESO_CORRIDA = "No se encontraron datos para corridas";
-  static MSJ_TIPO_CONTABLE = "El tipo de contable: Código: "
+  static MSJ_TIPO_CONTABLE = "El tipo de contable: Código: ";
   static MSJ_ESTADO_ACTIVAR = ", se ha activado correctamente";
   static MSJ_ESTADO_INACTIVAR = ", se ha inactivado correctamente";
   static MSJ_INGRESE_AL_MENOS_PERIODO_MOTIVO_BUSQUEDA = "Ingrese al menos 1 de las siguientes opciones: período, motivo o búsqueda";
@@ -662,7 +662,7 @@ export class LS {
   //compra
   static MSJ_POR_LO_MENOS_1_MOTIVO_COMPRA = "Debe tener por lo menos 1 motivo de compra creada";
   static MSJ_POR_LO_MENOS_1_MOTIVO_PROFORMA = "Debe tener por lo menos 1 motivo de proforma creada";
-  static MSJ_LONGITUD_CLAVE_ACCESO_NO_CORRECTA = "La longitud de la clave de acceso no es la correcta"
+  static MSJ_LONGITUD_CLAVE_ACCESO_NO_CORRECTA = "La longitud de la clave de acceso no es la correcta";
   //Tributacion
   static MSJ_ERROR_NUMERO_DESDE_HASTA = "El número desde y hasta no están bien ingresado.";
   static MSJ_ERROR_NUMERO_AUTORIZACION = "El número de autorización está mal ingresado (10 - 37 - 49 dígitos)";
@@ -673,7 +673,7 @@ export class LS {
   static MSJ_ERROR_RETENCION_IR = "El valor a retener no tiene que ser mayor a la suma de la base 0%, base imponible y base NG.";
   //Errores
   static ERROR_403_TITULO = 'Acceso denegado';
-  static ERROR_403_TEXTO = 'No tiene el permiso para realizar la operación solicitada.';//
+  static ERROR_403_TEXTO = 'No tiene el permiso para realizar la operación solicitada.';
   //Conciliacion
   static MSJ_CONCILIACION_TIENE_DIFERENCIAS = "La conciliación tiene diferencias.";
   //Sistema
@@ -853,12 +853,12 @@ export class LS {
   static TITULO_SEGURIDAD_INICIO = 'Seguridad del inicio';
   static TITULO_SEGURIDAD_INICIO_SESION = 'Seguridad e inicio de sesión';
   static TITULO_IMAGEN_DE_PERFIL = 'Imagen de perfil';
-  static TITULO_CONFIGURACION_PEDIDOS = "Configuración de pedidos"
-  static TITULO_CONFIGURACION_PRECIOS = "Configuración de precios"
-  static TITULO_CONFIGURACION_COSTOS = "Configuración de costos"
-  static TITULO_FORM_NUEVO_CONFIGURACION_PEDIDOS = "Nueva configuración de pedidos"
-  static TITULO_FORM_EDITAR_CONFIGURACION_PEDIDOS = "Editar configuración de pedidos"
-  static TITULO_FORM_CONSULTAR_CONFIGURACION_PEDIDOS = "Consultar configuración de pedidos"
+  static TITULO_CONFIGURACION_PEDIDOS = "Configuración de pedidos";
+  static TITULO_CONFIGURACION_PRECIOS = "Configuración de precios";
+  static TITULO_CONFIGURACION_COSTOS = "Configuración de costos";
+  static TITULO_FORM_NUEVO_CONFIGURACION_PEDIDOS = "Nueva configuración de pedidos";
+  static TITULO_FORM_EDITAR_CONFIGURACION_PEDIDOS = "Editar configuración de pedidos";
+  static TITULO_FORM_CONSULTAR_CONFIGURACION_PEDIDOS = "Consultar configuración de pedidos";
   static TITULO_CONFIGURACION_PLAN_CONTABLE = "Configuración plan contable";
   static TITULO_FORM_NUEVO_VALES_CAJA = 'Nuevo vale de caja';
   static TITULO_FORM_CONSULTAR_VALES_CAJA = 'Consulta vale de caja';
@@ -867,7 +867,7 @@ export class LS {
   static TITULO_FORM_NUEVA_CAJA_BANCO = 'Nueva caja';
   static TITULO_FORM_EDITAR_CAJA_BANCO = 'Editar caja';
   /* Acivos fijos */
-  static ACTIVO_FIJO = "Activo fijo"
+  static ACTIVO_FIJO = "Activo fijo";
   static ACTIVO_FIJO_LISTADO = 'Listado de activos fijos';
   static ACTIVO_FIJO_UBICACION = "Ubicación de activo fijo";
   static ACTIVO_FIJO_UBICACION_LISTADO = 'Listado de ubicación de activos fijos';
@@ -891,7 +891,7 @@ export class LS {
   static PRODUCCION_PRE_LIQUIDACION_LISTADO = 'Listado de pre liquidación de pesca';
   static PRODUCCION_DETALLE_LIQUIDACION_PESCA = 'Detalle de liquidación de pesca';
   static PRODUCCION_DETALLE_PRE_LIQUIDACION_PESCA = 'Detalle de pre liquidación de pesca';
-  static PRODUCCION_GRAMAJE_LISTADO = "Listado de gramaje"
+  static PRODUCCION_GRAMAJE_LISTADO = "Listado de gramaje";
   static PRODUCCION_COSTOS_MENSUALES = 'Costos mensuales';
   static PRODUCCION_LISTADO_COSTOS_MENSUALES = 'Listado de costos mensuales';
   static PRODUCCION_COSTOS_POR_FECHA_SIMPLE = 'Costos por fecha simple';
@@ -902,8 +902,8 @@ export class LS {
   static PRODUCCION_LISTADO_COSTOS_POR_PISCINA = 'Listado de costos por piscina';
   static PRODUCCION_UTILIDAD_DIARIA = 'Utilidad diaria';
   static PRODUCCION_LISTADO_UTILIDAD_DIARIA = 'Listado de utilidad diaria';
-  static PRODUCCION_ANALISIS_PESOS_Y_CRECIMIENTO = "Análisis de pesos y crecimiento"
-  static PRODUCCION_LISTADO_ANALISIS_PESOS_Y_CRECIMIENTO = "Listado de análisis de pesos y crecimiento"
+  static PRODUCCION_ANALISIS_PESOS_Y_CRECIMIENTO = "Análisis de pesos y crecimiento";
+  static PRODUCCION_LISTADO_ANALISIS_PESOS_Y_CRECIMIENTO = "Listado de análisis de pesos y crecimiento";
   static PRODUCCION_PRODUCTO_PESCA_LISTADO = "Listado de producto de pesca";
   static PRODUCCION_LISTADO_TALLA_PESCA = "Listado de talla de pesca";
   static PRODUCCION_SOBREVIVENCIA = "Listado de sobrevivencia";
@@ -965,7 +965,7 @@ export class LS {
   static CONTABILIDAD_DIARIO_AUXILIAR = 'Diario auxiliar de cuentas';
   static CONTABILIDAD_DIARIO_AUXILIAR_LISTADO = 'Listado de diario auxiliar de cuentas';
   static CONTABILIDAD_PLAN_CUENTAS = "Plan de cuentas";
-  static CONTABILIDAD_PLAN_CUENTAS_LISTADO = "Listado de plan de cuentas"
+  static CONTABILIDAD_PLAN_CUENTAS_LISTADO = "Listado de plan de cuentas";
   static CONTABILIDAD_TIPO_CONTABLE = "Tipo contable";
   static CONTABILIDAD_TIPO_CONTABLE_LISTADO = "Listado de tipo contable";
   static CONTABILIDAD_NUMERACIONES = "Numeraciones";
@@ -990,7 +990,7 @@ export class LS {
   static INCREMENTO_PROMEDIO = "Incremento promedio";
   static BALANCEADO_ACUMULADO = "Balanceado acumulado";
   static SOBREVIVENCIA = "Sobrevivencia";
-  static CONTABILIDAD_PLAN_CONTABLE = " plan de cuentas"
+  static CONTABILIDAD_PLAN_CONTABLE = " plan de cuentas";
   static CONTABILIDAD_ERRORES = "Contabilidad errores";
   static COMPRAS_ERRORES = "Compras errores";
   static CONSUMOS_ERRORES = "Consumos errores";
@@ -1034,7 +1034,7 @@ export class LS {
   static INVENTARIO_CLIENTE = 'Cliente';
   static INVENTARIO_CLIENTE_LISTADO = 'Listado de cliente';
   static INVENTARIO_CLIENTE_VENTA_CONSOLIDANDO = "Ventas - consolidando clientes";
-  static INVENTARIO_CLIENTE_VENTA_CONSOLIDANDO_LISTADO = "Listado de ventas - consolidando clientes"
+  static INVENTARIO_CLIENTE_VENTA_CONSOLIDANDO_LISTADO = "Listado de ventas - consolidando clientes";
   static INVENTARIO_FORMA_PAGO = 'Forma de pago';
   static INVENTARIO_FORMA_PAGO_LISTADO = 'Listado de forma de pago';
   static INVENTARIO_FORMA_COBRO = 'Forma de cobro';
@@ -1083,7 +1083,7 @@ export class LS {
   static INVENTARIO_SALDO_BODEGA_LISTADO = 'Listado de saldo bodega';
   static INVENTARIO_SALDO_BODEGA_COMPROBACION_MONTOS = "Saldo bodega comprobación (Montos)";
   static INVENTARIO_SALDO_BODEGA_COMPROBACION_MONTOS_LISTADO = 'Listado de saldo bodega comprobación (Montos)';
-  static INVENTARIO_SALDO_BODEGA_GENERAL = "Saldo bodega general"
+  static INVENTARIO_SALDO_BODEGA_GENERAL = "Saldo bodega general";
   static INVENTARIO_SALDO_BODEGA_GENERAL_LISTADO = 'Listado de saldo bodega general';
   static INVENTARIO_VENTA_LISTADO = 'Listado de venta';
   static INVENTARIO_VENTA_FACTURA = 'Venta Factura';
@@ -1211,11 +1211,11 @@ export class LS {
   /** Consumo */
   static CONSUMO_DETALLE = 'Detalle de consumo';
   /* Sistema */
-  static SISTEMA_CAJA_LISTADO = 'Listado perfil de facturación'
-  static SISTEMA_RES_CONTRIBUYENTE = 'Res. contribuyente especial'
-  static SISTEMA_RES_CONTRIBUYENTE_COMPLETO = 'Resolución de contribuyente especial'
-  static SISTEMA_OBLIGADO_A_LLEVAR_CONTABILIDAD = 'Obligado a llevar contabilidad'
-  static SISTEMA_ESCOGER_POR = 'Escoger por'
+  static SISTEMA_CAJA_LISTADO = 'Listado perfil de facturación';
+  static SISTEMA_RES_CONTRIBUYENTE = 'Res. contribuyente especial';
+  static SISTEMA_RES_CONTRIBUYENTE_COMPLETO = 'Resolución de contribuyente especial';
+  static SISTEMA_OBLIGADO_A_LLEVAR_CONTABILIDAD = 'Obligado a llevar contabilidad';
+  static SISTEMA_ESCOGER_POR = 'Escoger por';
   static SISTEMA_USUARIO_LISTADO = "Listado de usuario";
   static SISTEMA_PERIODO_LISTADO = "Listado de periodos";
   static SISTEMA_NUEVO_USUARIO = "Nuevo usuario";
@@ -1491,7 +1491,7 @@ export class LS {
   static TAG_CP_CC = 'CP|CC';
   static TAG_CP = 'CP';
   static TAG_CC = 'CC';
-  static TAG_CENTRO_PRODUCCION_CENTRO_COSTO = 'Centro de producción | centro de costo'
+  static TAG_CENTRO_PRODUCCION_CENTRO_COSTO = 'Centro de producción | centro de costo';
   static TAG_CENTRO_PRODUCCION = 'Centro de producción';
   static TAG_CENTRO_COSTO = 'Centro de costo';
   static TAG_CUENTA = 'Cuenta';
@@ -1517,7 +1517,7 @@ export class LS {
   static TAG_DESDE = 'Desde';
   static TAG_DETALLE = 'Detalle';
   static TAG_CODIGO_MAGISTERIAL = 'Código magisterial';
-  static TAG_DETALLE_CONTABLE = "Detalle de contable"
+  static TAG_DETALLE_CONTABLE = "Detalle de contable";
   static TAG_DETALLE_VENTA = 'Detalle de venta';
   static TAG_DETALLE_COMPRA = 'Detalle de compra';
   static TAG_DETALLE_PROFORMA = 'Detalle de proforma';
@@ -1984,9 +1984,9 @@ export class LS {
   static TAG_NICK_NAME = "Nick Name";
   static TAG_APELLIDOS = "Apellidos";
   static TAG_APELLIDOS_Y_NOMBRES = "Apellidos y nombres";
-  static TAG_CONTRASENA_ACTUAL = "Contraseña Actual"
-  static TAG_NUEVA_CONTRASENA = "Nueva contraseña"
-  static TAG_CONFIRMAR_NUEVA_CONTRASENA = "Confirmar nueva contraseña"
+  static TAG_CONTRASENA_ACTUAL = "Contraseña Actual";
+  static TAG_NUEVA_CONTRASENA = "Nueva contraseña";
+  static TAG_CONFIRMAR_NUEVA_CONTRASENA = "Confirmar nueva contraseña";
   static TAG_ULTIMOS_50 = "Últimos 50";
   static TAG_ULTIMOS_100 = "Últimos 100";
   static TAG_DE_EJECUCION_OBSERVACIONES = "Observaciones de ejecución";
@@ -2504,7 +2504,7 @@ export class LS {
   static TAG_PAGOS = "Pagos";
   static TAG_IMPORTAR_XML = "Importar XML";
   static TAG_CADUCA = "Caduca";
-  static TAG_NUMERO_LINEAS = "Número líneas"
+  static TAG_NUMERO_LINEAS = "Número líneas";
   static TAG_MOTIVO_ANULACION = "Motivo de anulación";
   static TAG_FORMATO_POS = "Formato POS";
   static TAG_MOSTRAR_DIALOGO_IMPRESION = "Mostrar diálogo impresión";
@@ -2587,7 +2587,7 @@ export class LS {
   static LISTA_MOTIVOS_VENTA_FORMA_CONTABILIZAR = ['AUTOMATICAMENTE', 'PREGUNTAR', 'NO CONTABILIZAR'];
   static LISTA_MOTIVOS_CONSUMOS_FORMA_CONTABILIZAR = ['AUTOMATICAMENTE', 'PREGUNTAR', 'NO CONTABILIZAR'];
   static LISTA_TIPOS_PRODUCTO = ['BIENES', 'SERVICIOS', 'MATERIA PRIMA', 'ACTIVO FIJO'];
-  static LISTA_PRECIO_VENTA = ['Según Cantidad', 'Precio 1 (Unidad)', 'Precio 2 (Docena)', 'Precio 3 (Bulto)', 'Precio 4 (Mayorista)', 'Precio 5 (Otros)']
+  static LISTA_PRECIO_VENTA = ['Según Cantidad', 'Precio 1 (Unidad)', 'Precio 2 (Docena)', 'Precio 3 (Bulto)', 'Precio 4 (Mayorista)', 'Precio 5 (Otros)'];
   static LISTA_SUCESOS = ['DELETE', 'EXPORT', 'INSERT', 'LOGIN', 'LOGOUT', 'PRINT', 'SELECT', 'TODOS', 'UPDATE'];
   static LISTA_SUBCATEGORIAS = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', 'OTROS'];
   static LISTA_ESTADO = ['TODOS', 'ERROR', 'ANULADA'];
@@ -2681,5 +2681,7 @@ export class LS {
   //SCANNER
   static LISTA_IMAGENES_COMPRA = [];
   static TIPO_IMAGEN = null;
+// constantes formulario de suscripcion:
+
 
 }
