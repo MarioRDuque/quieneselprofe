@@ -6,6 +6,7 @@ import { Suscriptor } from '../../entidades/suscriptor';
 import { UtilService } from '../../services/util.service';
 import { ApiRequestService } from '../../services/api-request.service';
 import { LS } from '../../constantes/app-constants';
+import { Facultad } from '../../entidades/facultad';
 
 @Component({
   selector: 'app-suscripcion',
@@ -16,7 +17,7 @@ export class SuscripcionComponent implements OnInit {
 
   public suscriptor: Suscriptor = new Suscriptor();
   public resultadoApi: any = "";
-  public resultadoFacultad: any = "";
+  public resultadoFacultad: Array<Facultad> = new Array();
   cargando: boolean = false;
 
   constructor(
@@ -29,13 +30,12 @@ export class SuscripcionComponent implements OnInit {
   ngOnInit() {
     this.obtenerFacultades();
   }
-  obtenerFacultades(){
-    this.api.get("listardata/facultades").then(data=>{
-      if (data && data.extraInfo){
-        this.resultadoFacultad=data;
-        console.log(this.resultadoFacultad.extraInfo[0].nombreFac);
+  obtenerFacultades() {
+    this.api.get("facultades/listar").then(data => {
+      if (data && data.extraInfo) {
+        this.resultadoFacultad = data.extraInfo;
       }
-    }).catch(err=>{
+    }).catch(err => {
       console.log(err);
     });
   }

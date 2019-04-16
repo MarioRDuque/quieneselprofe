@@ -92,15 +92,8 @@
                                         <label class="my-1 mr-2" for="comboFac">Facultad</label>
                                         <select class="form-control my-1 mr-sm-2 " name="facultad"
                                             [(ngModel)]="suscriptor.facultad" id="comboFac" required>
-                                            <option value="Agronomía">{{resultadoFacultad.extraInfo[0].nombreFac}}</option>
-                                            <option value="Civil">{{resultadoFacultad.extraInfo[1].nombreFac}}</option>
-                                            <option value="Derecho">{{resultadoFacultad.extraInfo[2].nombreFac}}</option>
-                                            <option value="Economía">{{resultadoFacultad.extraInfo[3].nombreFac}}</option>
-                                            <option value="Educación">{{resultadoFacultad.extraInfo[4].nombreFac}}</option>
-                                            <option value="Industrial">{{resultadoFacultad.extraInfo[5].nombreFac}}</option>
-                                            <option value="Contabilidad">{{resultadoFacultad.extraInfo[6].nombreFac}}</option>
-                                            <option value="Medicina">{{resultadoFacultad.extraInfo[1].nombreFac}}</option>
-                                            <option value="Minas">{{resultadoFacultad.extraInfo[0].nombreFac}}</option>
+                                            <option *ngFor="let facultad of resultadoFacultad"
+                                                value="facultad.idFacultad">{{facultad.nombreFac}}</option>
                                         </select>
                                     </div>
                                 </div>
