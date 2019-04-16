@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { GlobalService } from './global.service';
-import { MENU_ITEM } from '../../modulos/pages/menu';
+import { MENU_ITEM } from '../../modulos/menu';
 
 @Injectable()
 export class menuService {
