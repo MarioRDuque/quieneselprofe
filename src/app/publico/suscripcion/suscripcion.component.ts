@@ -16,6 +16,7 @@ export class SuscripcionComponent implements OnInit {
 
   public suscriptor: Suscriptor = new Suscriptor();
   public resultadoApi: any = "";
+  public resultadoFacultad: any = "";
   cargando: boolean = false;
 
   constructor(
@@ -26,8 +27,18 @@ export class SuscripcionComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.obtenerFacultades();
   }
-
+  obtenerFacultades(){
+    this.api.get("listardata/facultades").then(data=>{
+      if (data && data.extraInfo){
+        this.resultadoFacultad=data;
+        console.log(this.resultadoFacultad.extraInfo[0].nombreFac);
+      }
+    }).catch(err=>{
+      console.log(err);
+    });
+  }
   enviar(form: NgForm) {
 
 
