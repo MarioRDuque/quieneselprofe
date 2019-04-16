@@ -35,10 +35,7 @@
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/popper.js/dist/umd/popper.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "node_modules/sweetalert2/dist/sweetalert2.js",
-              "src/assets/tema/js/pace.min.js",
-              "src/assets/tema/js/perfect-scrollbar.min.js",
-              "src/assets/tema/js/coreui.min.js"
+              "node_modules/sweetalert2/dist/sweetalert2.js"
             ],
             "es5BrowserSupport": true
           },

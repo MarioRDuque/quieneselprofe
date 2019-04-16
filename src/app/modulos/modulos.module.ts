@@ -1,17 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HotkeysService, HotkeyModule } from 'angular2-hotkeys';
+import { HotkeysService } from 'angular2-hotkeys';
 import { ModulosRoutingModule } from './modulos-routing.module';
 import { ModulosComponent } from './modulos.component';
 import { SharedModule } from '../shared/shared.module';
+import { LayoutModule } from '../shared/layout.module';
 
 @NgModule({
-  declarations: [ModulosComponent],
   imports: [
     CommonModule,
+    LayoutModule,
     SharedModule,
-    HotkeyModule.forRoot(),
     ModulosRoutingModule
+  ],
+  declarations: [
+    ModulosComponent
   ],
   providers: [
     HotkeysService

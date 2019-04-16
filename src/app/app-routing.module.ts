@@ -20,8 +20,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'modulos',
-    // loadChildren: './modulos/modulos.module#ModulosModule',
-    loadChildren: './modulos/pages/pages.module#PagesModule',
+    loadChildren: './modulos/modulos.module#ModulosModule',
     // canActivate: [AuthGuardService],
     resolve: {
       clear: ClearMenuResolve
