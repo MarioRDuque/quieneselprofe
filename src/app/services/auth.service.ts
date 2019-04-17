@@ -5,6 +5,7 @@ import { Subject } from 'rxjs/internal/Subject';
 import { Observable } from 'rxjs/internal/Observable';
 import { ApiRequestService } from './api-request.service';
 import { ToastrService } from 'ngx-toastr';
+import { UtilService } from './util.service';
 
 export interface ObjetoJWT {
     userId: string;
@@ -30,11 +31,12 @@ export class AuthService {
     constructor(
         private router: Router,
         private apiRequest: ApiRequestService,
+        private utilService: UtilService,
         private toastr: ToastrService
     ) { }
 
-    ingresar(username: string, password: string) {
-        let bodyData = {
+    ingresar(username: string, password: string, contexto) {
+        let bodyData: any = {
             'username': username,
             'password': password
         };
@@ -56,19 +58,19 @@ export class AuthService {
                             localStorage.setItem(LS.KEY_DATOS_INICIALES, JSON.stringify(jsonResp.iniciales));
                             localStorage.setItem(LS.KEY_NOTIFICACIONES, JSON.stringify(jsonResp.notificaciones));
                             localStorage.setItem(LS.KEY_FOTO_PERFIL, JSON.stringify(jsonResp.iniciales && jsonResp.iniciales.usuario ? jsonResp.iniciales.usuario.imagen : ""));
-                            this.isLogged$.next(true);
+                            contexto.logueoCorrecto();
                         } else {
                             this.router.navigate(['/cambiarclave']);
+                            contexto.cargando = false;
                         }
                     } else {
                         this.toastr.error(jsonResp.operacionMensaje, LS.TOAST_ERROR);
+                        contexto.cargando = false;
                         this.cerrarSession();
-                        this.isLogged$.next(false);
                     }
                 })
             .catch(err => {
-                this.isLogged$.next(false);
-                this.handleError(err, this);
+                this.utilService.handleError(err, contexto);
             });
     }
 

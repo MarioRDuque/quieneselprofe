@@ -6,6 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from '../../shared/shared.module';
 import { UtilService } from '../../services/util.service';
 import { LayoutModule } from '../../shared/layout.module';
+import { ApiRequestService } from '../../services/api-request.service';
+import { SuscripcionService } from './suscripcion.service';
 
 @NgModule({
   declarations: [SuscripcionComponent],
@@ -16,7 +18,9 @@ import { LayoutModule } from '../../shared/layout.module';
     SuscripcionRoutingModule
   ],
   providers: [
-    UtilService
+    UtilService,
+    ApiRequestService,
+    SuscripcionService
   ]
 })
 export class SuscripcionModule { }

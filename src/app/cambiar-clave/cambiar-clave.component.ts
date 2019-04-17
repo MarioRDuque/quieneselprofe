@@ -59,7 +59,7 @@ export class CambiarClaveComponent implements OnInit {
   ingresar() {
     if (this.usuario.usuario && this.usuario.contrasena) {
       this.cargando = true;
-      this.authService.ingresar(this.usuario.usuario, this.usuario.contrasena);
+    //  this.authService.ingresar(this.usuario.usuario, this.usuario.contrasena);
       this.authService.getIsLogged$().subscribe(respuesta => {
         this.isLogged = respuesta;
         this.cargando = false;

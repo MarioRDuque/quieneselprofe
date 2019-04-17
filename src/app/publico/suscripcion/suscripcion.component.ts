@@ -7,6 +7,7 @@ import { UtilService } from '../../services/util.service';
 import { ApiRequestService } from '../../services/api-request.service';
 import { LS } from '../../constantes/app-constants';
 import { Facultad } from '../../entidades/facultad';
+import { SuscripcionService } from './suscripcion.service';
 
 @Component({
   selector: 'app-suscripcion',
@@ -17,7 +18,7 @@ export class SuscripcionComponent implements OnInit {
 
   public suscriptor: Suscriptor = new Suscriptor();
   public resultadoApi: any = "";
-  public resultadoFacultad: any = "";
+  public resultadoFacultad: Array<Facultad> = new Array();
   cargando: boolean = false;
 
   constructor(
@@ -25,7 +26,7 @@ export class SuscripcionComponent implements OnInit {
     private toastr: ToastrService,
     private navegar: Router,
     private api: ApiRequestService,
-    private facultades: Array<Facultad>=new Array()
+    private _Facultad:SuscripcionService
   ) { }
 
   ngOnInit() {
@@ -33,7 +34,18 @@ export class SuscripcionComponent implements OnInit {
   }
   obtenerFacultades(){
     this.cargando=true;
-    s
+    this._Facultad.obtenerFacultades(this);
+    /*
+    this.api.get("facultades/listar").then(data => {
+      if (data && data.extraInfo) {
+        this.resultadoFacultad = data.extraInfo;
+        this.cargando=false;
+      }
+    }).catch(err => {
+      console.log(err);
+      this.cargando=false;
+    });
+*/
   }
   enviar(form: NgForm) {
 
@@ -75,6 +87,7 @@ export class SuscripcionComponent implements OnInit {
 //metodos especiales de las peticiones:
   despuesDeObtenerFacultades(data){
     this.cargando=false;
+    this.resultadoFacultad=data.extraInfo;
 
   }
 }

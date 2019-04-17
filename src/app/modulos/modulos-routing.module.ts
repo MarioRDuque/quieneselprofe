@@ -6,7 +6,11 @@ const routesModule: Routes = [
   {
     path: '',
     component: ModulosComponent,
-    runGuardsAndResolvers: 'always'
+    children: [
+      { path: '', redirectTo: 'index', pathMatch: 'full' },
+      { path: 'index', loadChildren: './index/index.module#IndexModule' },
+      { path: 'profile', loadChildren: './profile/profile.module#ProfileModule' }
+    ]
   }
 ];
 

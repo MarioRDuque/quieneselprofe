@@ -4,6 +4,7 @@ import { PublicoComponent } from './publico.component';
 import { LoginRoutingModule } from './publico-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from '../shared/shared.module';
+import { ApiRequestService } from '../services/api-request.service';
 
 @NgModule({
   declarations: [PublicoComponent],
@@ -12,6 +13,9 @@ import { SharedModule } from '../shared/shared.module';
     LoginRoutingModule,
     SharedModule,
     NgbModule.forRoot()
+  ],
+  providers:[
+    ApiRequestService
   ]
 })
 export class PublicoModule { }

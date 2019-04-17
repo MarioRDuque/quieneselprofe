@@ -5,18 +5,17 @@ import { ApiRequestService } from '../../services/api-request.service';
   providedIn: 'root'
 })
 export class SuscripcionService {
- private  api: ApiRequestService;
-  
-  constructor() { }
+  constructor(private  api:ApiRequestService) { }
   obtenerFacultades(contexto){
     this.api.get("listardata/facultades").then(data=>{
       if (data && data.extraInfo){
-        contexto.despuesDeObtenerFacultades(data.extraInfo.nombreFac);
-        this.resultadoFacultad=data;
-        console.log(this.resultadoFacultad.extraInfo[0].nombreFac);
+        contexto.resultadoFacultad=data.extraInfo;
+        console.log(data.extraInfo);
       }
     }).catch(err=>{
-      console.log(err);
+      contexto.cargando=false;
+      console.log("error de mrd:" +err);
+      
     });
   }
 }
