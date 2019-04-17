@@ -6,6 +6,7 @@ import { Suscriptor } from '../../entidades/suscriptor';
 import { UtilService } from '../../services/util.service';
 import { ApiRequestService } from '../../services/api-request.service';
 import { LS } from '../../constantes/app-constants';
+import { Facultad } from '../../entidades/facultad';
 
 @Component({
   selector: 'app-suscripcion',
@@ -23,21 +24,16 @@ export class SuscripcionComponent implements OnInit {
     private utilService: UtilService,
     private toastr: ToastrService,
     private navegar: Router,
-    private api: ApiRequestService
+    private api: ApiRequestService,
+    private facultades: Array<Facultad>=new Array()
   ) { }
 
   ngOnInit() {
     this.obtenerFacultades();
   }
   obtenerFacultades(){
-    this.api.get("listardata/facultades").then(data=>{
-      if (data && data.extraInfo){
-        this.resultadoFacultad=data;
-        console.log(this.resultadoFacultad.extraInfo[0].nombreFac);
-      }
-    }).catch(err=>{
-      console.log(err);
-    });
+    this.cargando=true;
+    s
   }
   enviar(form: NgForm) {
 
@@ -76,5 +72,9 @@ export class SuscripcionComponent implements OnInit {
     this.toastr.info("Usted ha cancelado la suscripción", "CANCELAR");
     this.navegar.navigate(['/docentes']);
   }
+//metodos especiales de las peticiones:
+  despuesDeObtenerFacultades(data){
+    this.cargando=false;
 
+  }
 }
