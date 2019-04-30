@@ -11,6 +11,7 @@ export class SuscripcionService {
     this.api.get("facultades/listar").then(data => {
       if (data && data.extraInfo) {
         contexto.resultadoFacultad = data.extraInfo;
+<<<<<<< HEAD
         contexto.cargando = false;
       }
     }).catch(err => {
@@ -38,3 +39,15 @@ export class SuscripcionService {
       });
   }
 }
+=======
+        console.log(data.extraInfo);
+      }
+      contexto.cargando = false;
+    }).catch(err => {
+      contexto.cargando = false;
+      console.log("error de mrd:" + err);
+
+    });
+  }
+}
+>>>>>>> 324ebec8edca85a7f4e5590b9314e545b89f568d
