@@ -60,7 +60,8 @@
                                             <div class="input-group-prepend">
                                                 <div class="input-group-text" id="btnGroupAddon">@</div>
                                             </div>
-                                            <input [(ngModel)]="suscriptor.correo" name="correo" type="email"
+                                            <input [(ngModel)]="suscriptor.correo" name="correo" type="email"  
+                                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
                                                 class="form-control" required>
                                         </div>
                                     </div>
@@ -93,7 +94,7 @@
                                         <select class="form-control my-1 mr-sm-2 " name="facultad"
                                             [(ngModel)]="suscriptor.facultad" id="comboFac" required>
                                             <option *ngFor="let facultad of resultadoFacultad"
-                                                value="facultad.idFacultad">{{facultad.nombreFac}}</option>
+                                                value="{{facultad.idFacultad}}">{{facultad.nombreFac}}</option>
                                         </select>
                                     </div>
                                 </div>

@@ -5,7 +5,7 @@
 }
 
 .has-warning {
-  border-bottom: 2px solid #ffc107 !important;
+  border-bottom: 2px solid #ffda07 !important;
 }
 
 .ng-touched.ng-invalid:not(form) {

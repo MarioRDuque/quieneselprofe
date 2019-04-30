@@ -26,7 +26,7 @@ export class SuscripcionComponent implements OnInit {
     private toastr: ToastrService,
     private navegar: Router,
     private api: ApiRequestService,
-    private _Facultad:SuscripcionService
+    private _suscripcionService:SuscripcionService
   ) { }
 
   ngOnInit() {
@@ -34,42 +34,13 @@ export class SuscripcionComponent implements OnInit {
   }
   obtenerFacultades(){
     this.cargando=true;
-    this._Facultad.obtenerFacultades(this);
-    /*
-    this.api.get("facultades/listar").then(data => {
-      if (data && data.extraInfo) {
-        this.resultadoFacultad = data.extraInfo;
-        this.cargando=false;
-      }
-    }).catch(err => {
-      console.log(err);
-      this.cargando=false;
-    });
-*/
+    this._suscripcionService.obtenerFacultades(this);
   }
   enviar(form: NgForm) {
-
-
+    this.suscriptor.pendienteAprob="V";
     let formularioTocado = this.utilService.establecerFormularioTocado(form);
     if (formularioTocado && form && form.valid) {
-      this.cargando = true;
-      this.api.post("suscripciones/guardar", this.suscriptor).
-        then(data => {
-          if (data && data.extraInfo) {
-            this.resultadoApi = data;
-            console.log(this.resultadoApi);
-            this.toastr.success(this.resultadoApi.operacionMensaje, this.resultadoApi.estadoOperacion);
-            this.suscriptor = new Suscriptor();
-            this.cargando = false;
-          } else {
-            this.toastr.warning(data.operacionMensaje, LS.TAG_AVISO);
-            this.cargando = false;
-          }
-        }).catch(err => {
-          console.log(err);
-          this.cargando = false;
-          this.toastr.error(err, LS.TAG_ERROR);
-        });
+      this._suscripcionService.solicitarSuscripcion(this);
     } else {
       this.toastr.error(LS.MSJ_CAMPOS_INVALIDOS, LS.MSJ_TITULO_INVALIDOS);
     }
@@ -85,9 +56,5 @@ export class SuscripcionComponent implements OnInit {
     this.navegar.navigate(['/docentes']);
   }
 //metodos especiales de las peticiones:
-  despuesDeObtenerFacultades(data){
-    this.cargando=false;
-    this.resultadoFacultad=data.extraInfo;
-
-  }
+ 
 }
