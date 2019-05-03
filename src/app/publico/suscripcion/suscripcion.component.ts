@@ -26,36 +26,16 @@ export class SuscripcionComponent implements OnInit {
     private toastr: ToastrService,
     private navegar: Router,
     private api: ApiRequestService,
-<<<<<<< HEAD
     private _suscripcionService:SuscripcionService
-=======
-    private suscripcionService: SuscripcionService
->>>>>>> 324ebec8edca85a7f4e5590b9314e545b89f568d
+
   ) { }
 
   ngOnInit() {
     this.obtenerFacultades();
   }
-<<<<<<< HEAD
   obtenerFacultades(){
     this.cargando=true;
     this._suscripcionService.obtenerFacultades(this);
-=======
-  obtenerFacultades() {
-    this.cargando = true;
-    this.suscripcionService.obtenerFacultades(this);
-    /*
-    this.api.get("facultades/listar").then(data => {
-      if (data && data.extraInfo) {
-        this.resultadoFacultad = data.extraInfo;
-        this.cargando=false;
-      }
-    }).catch(err => {
-      console.log(err);
-      this.cargando=false;
-    });
-*/
->>>>>>> 324ebec8edca85a7f4e5590b9314e545b89f568d
   }
   enviar(form: NgForm) {
     this.suscriptor.pendienteAprob="V";
@@ -76,15 +56,4 @@ export class SuscripcionComponent implements OnInit {
     this.toastr.info("Usted ha cancelado la suscripción", "CANCELAR");
     this.navegar.navigate(['/docentes']);
   }
-<<<<<<< HEAD
-//metodos especiales de las peticiones:
- 
-=======
-  //metodos especiales de las peticiones:
-  despuesDeObtenerFacultades(data) {
-    this.cargando = false;
-    this.resultadoFacultad = data.extraInfo;
-
-  }
->>>>>>> 324ebec8edca85a7f4e5590b9314e545b89f568d
 }

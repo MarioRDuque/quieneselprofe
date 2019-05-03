@@ -1,65 +1,104 @@
 <div class="row">
   <div class="col-md-3 animated fadeIn">
-    <div class="card card-block tip-card">
-      <div class="tip-msg">
-        <h3>Current Users</h3>
-        <span>102,018 / 200,450</span>
+    <div class="card m-0">
+      <div class="card-header p-1">
+        <i class="fa fa-filter"></i>
+        <b>Filtros</b>
       </div>
-      <button class="tip-ico tip-ico-primary">
-        <i class="fa fa-group fa-fw"></i>
-      </button>
+      <div class="card-body pb-0 pt-1">
+        <div class="form-group form-group-sm">
+          <label class="control-label  ">
+            <strong>SocialDoc</strong>
+          </label>
+          <select name="select" id="select1" class="form-control">
+            <option value="option1">option1</option>
+            <option value="option2">option2</option>
+            <option value="option3">option3</option>
+            <option value="option4">option4</option>
+          </select>
+        </div>
+        <div class="form-group form-group-sm">
+          <label class="control-label  ">
+            <strong>Búsqueda</strong>
+          </label>
+          <input name="marAbreviado" placeholder="Obligatorio" pattern=""
+            class="form-control input-sm mousetrap text-uppercase" required minlength="1" maxlength="500" appUppercase>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        <div class="text-right">
+          <button id="btnBuscarMarcaProducto" type="button" class="btn btn-sm btn-primary mr-1">
+            <i class="fa fa-search" aria-hidden="true"></i> &nbsp;Buscar</button>
+          <button class="btn btn-sm btn-primary" type="button">
+            <i class="fa fa-print" aria-hidden="true"></i> &nbsp;Nuevo</button>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="col-md-3 animated fadeIn">
-    <div class="card card-block tip-card">
-      <div class="tip-msg">
-        <h3>Messages</h3>
-        <span>2 messages</span>
+  <!-- seccion de la tabla...-->
+  <div class="col-md-8 animated fadeIn">
+    <div class="card-header-actions">
+      <div class="btn-group d-none float-right d-lg-block">
+        <button type="button" class="btn btn-sm btn-primary mr-1">
+          <i class="fa fa-print" aria-hidden="true"></i>Importar
+        </button>
+        <button type="button" class="btn btn-sm btn-primary mr-1">
+          <i class="fa  fa-download"></i>Exportar
+        </button>
       </div>
-      <button class="tip-ico tip-ico-info">
-        <i class="fa fa-comments fa-fw"></i>
-      </button>
     </div>
-  </div>
-  <div class="col-md-3 animated fadeIn">
-    <div class="card card-block tip-card">
-      <div class="tip-msg">
-        <h3>Mails</h3>
-        <span>2 mails</span>
+
+    <!--filtrar-->
+    <div class="row">
+      <div class="col-sm-5 col-md-6">
+        <div class="input-group p-1">
+          <input type="text" class="form-control form-control-sm input-filter" size="100"
+            style="font-family: Arial, FontAwesome;" placeholder="&#xf0b0; Filtrar" size="100">
+          <div class="input-group-append">
+            <span class="input-group-text"><i class="fa fa-search"></i></span>
+          </div>
+        </div>
       </div>
-      <button class="tip-ico tip-ico-success">
-        <i class="fa fa-envelope fa-fw"></i>
-      </button>
-    </div>
-  </div>
-  <div class="col-md-3 animated fadeIn">
-    <div class="card card-block tip-card">
-      <div class="tip-msg">
-        <h3>Feedback</h3>
-        <span>20 feedbacks</span>
+      <!--botones imprimir y exportar-->
+
+      <div class="col-sm-7 col-md-6">
+        <div class="float-right pr-1">
+
+        </div>
       </div>
-      <button class="tip-ico tip-ico-danger">
-        <i class="fa fa-warning fa-fw"></i>
-      </button>
     </div>
+    <!--tabla-->
+    <div class="row">
+      <div class="col-md-12">
+        <card cardTitle="Data Table">
+          <table class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th>FIRSTNAME</th>
+                <th>LASTNAME</th>
+                <th>USERNAME</th>
+                <th>EMAIL</th>
+                <th>AGE</th>
+                <th>STATE</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of tableData ">
+                <td>{{item.firstName}}</td>
+                <td>{{item.lastName}}</td>
+                <td>{{item.username}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.age}}</td>
+                <td>
+                  <span class="label label-info">info</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </card>
+      </div>
+    </div>
+
   </div>
-  <div class="col-md-8">
-    <card cardTitle='Bar Chart' isCollapse="true">
-    </card>
-  </div>
-  <div class="col-md-4">
-    <card cardTitle="Todo List" isCollapse="true">
-      <du-todolist></du-todolist>
-    </card>
-  </div>
-  <div class="col-md-6">
-    <card>
-      <profile></profile>
-    </card>
-  </div>
-  <div class="col-md-6">
-    <card>
-      <weather></weather>
-    </card>
-  </div>
-</div>
