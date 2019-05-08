@@ -13,8 +13,13 @@ export class IndexComponent implements OnInit {
   pageSize = 10;
   pageNumber = 1;
   public AnimationBarOption;
+  public activar: boolean = false;
+  public isScreamMd: boolean;
+  public activarFilter:boolean=true;    
 
-  constructor(private _tablaService : DataService) { }
+  constructor(private _tablaService : DataService) {
+    this.isScreamMd = window.innerWidth <= 576 ? false : true;
+   }
 
   ngOnInit() {
     this.tableData=this._tablaService.DATA;
@@ -22,5 +27,9 @@ export class IndexComponent implements OnInit {
   
   pageChanged(pN: number): void {
     this.pageNumber = pN;
+  }
+  cambiarActivar() {
+    this.activarFilter = !this.activarFilter;
+    //this.enviarAccion.emit({ accion: LS.ACCION_ACTIVAR, activar: this.activar });
   }
 }
