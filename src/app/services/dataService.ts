@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 
 @Injectable()
-export class DataService{
+export class DataService {
     DATA = [
         {
             id: 1,

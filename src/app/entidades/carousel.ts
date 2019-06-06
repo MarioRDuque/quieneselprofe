@@ -1,5 +1,5 @@
 export class Carousel {
-    public imagen: string = '';
+	public imagen: string = '';
 	public descripcion: string = '';
 	titulo: string = '';
 	claseImagen: string = '';

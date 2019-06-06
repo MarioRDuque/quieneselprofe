@@ -4,18 +4,7 @@ import { Injectable } from '@angular/core';
 export class WeatherService {
     static times = 0;
     private baseUrl: string = 'https://www.sojson.com/open/api/weather/json.shtml?city=深圳';
-
-    constructor() { }
-
-    getJSON() {
-        let callback = "&callback=" + "__ng_jsonp__.__req" + WeatherService.times + ".finished";
-        WeatherService.times++;
-        let url = this.baseUrl + callback;
-        return null;
-    }
-
-
-    DATA = [
+    public DATA = [
         {
             "date": "03-04",
             "high": "29.0℃",
@@ -52,5 +41,14 @@ export class WeatherService {
             "type": "yintian",
         }
     ];
+
+    constructor() { }
+
+    getJSON() {
+        let callback = "&callback=" + "__ng_jsonp__.__req" + WeatherService.times + ".finished";
+        WeatherService.times++;
+        let url = this.baseUrl + callback;
+        return null;
+    }
 
 }

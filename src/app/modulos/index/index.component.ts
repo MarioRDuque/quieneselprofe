@@ -5,7 +5,7 @@ import { DataService } from '../../services/dataService';
   selector: 'app-index',
   templateUrl: './index.component.html',
   styleUrls: ['./index.component.scss'],
-  providers:[DataService]
+  providers: [DataService]
 })
 export class IndexComponent implements OnInit {
   showloading: boolean = false;
@@ -15,16 +15,16 @@ export class IndexComponent implements OnInit {
   public AnimationBarOption;
   public activar: boolean = false;
   public isScreamMd: boolean;
-  public activarFilter:boolean=true;    
+  public activarFilter: boolean = true;
 
-  constructor(private _tablaService : DataService) {
+  constructor(private _tablaService: DataService) {
     this.isScreamMd = window.innerWidth <= 576 ? false : true;
-   }
+  }
 
   ngOnInit() {
-    this.tableData=this._tablaService.DATA;
+    this.tableData = this._tablaService.DATA;
   }
-  
+
   pageChanged(pN: number): void {
     this.pageNumber = pN;
   }

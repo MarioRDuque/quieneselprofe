@@ -5,12 +5,12 @@ import { SuscripcionService } from './suscripcion.service';
 describe('SuscripcionService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers:[SuscripcionService]
+      providers: [SuscripcionService]
     });
-   
+
   });
 
-  it('should be created', inject([SuscripcionService],(service:SuscripcionService)=>{
+  it('should be created', inject([SuscripcionService], (service: SuscripcionService) => {
     expect(service).toBeTruthy();
   }));
 });

@@ -15,7 +15,7 @@ import { SuscripcionService } from './suscripcion/suscripcion.service';
     SharedModule,
     NgbModule.forRoot()
   ],
-  providers:[
+  providers: [
     ApiRequestService,
     SuscripcionService
   ]

@@ -6,5 +6,5 @@ export class Suscriptor {
 	codDocente: string = '';
 	password: string = '';
 	facultad: string = '';
-	pendienteAprob: string='';
+	pendienteAprob: string = '';
 }
