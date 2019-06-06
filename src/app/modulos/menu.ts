@@ -1,27 +1,27 @@
 export let MENU_ITEM = [
     {
         path: 'index',
-        title: 'Dashboard',
+        title: 'Principal',
         icon: 'dashboard'
     },
     {
         path: 'editor',
-        title: 'Pell Editor',
+        title: 'Perfil',
         icon: 'pencil'
     },
     {
         path: 'icon',
-        title: 'Icon',
+        title: 'Contenido',
         icon: 'diamond'
     },
     {
         path: 'profile',
-        title: 'User Profile',
+        title: 'Horario',
         icon: 'user'
     },
     {
         path: 'ui',
-        title: 'UI Element',
+        title: 'Temas Relacionados',
         icon: 'paint-brush',
         children: [
             {
@@ -51,16 +51,12 @@ export let MENU_ITEM = [
             {
                 path: 'progress-bar',
                 title: 'ProgressBar'
-            },
-            /*  {
-                 path: 'loading',
-                 title: 'Loading'
-             }, */
+            }
         ]
     },
     {
         path: 'form',
-        title: 'Forms',
+        title: 'Investigaciones',
         icon: 'check-square-o',
         children: [
             {
@@ -83,7 +79,7 @@ export let MENU_ITEM = [
     },
     {
         path: 'charts',
-        title: 'Charts',
+        title: 'Cursos',
         icon: 'bar-chart',
         children: [
             {
@@ -94,7 +90,7 @@ export let MENU_ITEM = [
     },
     {
         path: 'table',
-        title: 'Tables',
+        title: 'Ubicacion',
         icon: 'table',
         children: [
             {
@@ -109,7 +105,7 @@ export let MENU_ITEM = [
     },
     {
         path: 'menu-levels',
-        title: 'Menu Levels',
+        title: 'Reacciones',
         icon: 'sitemap',
         children: [
             {
