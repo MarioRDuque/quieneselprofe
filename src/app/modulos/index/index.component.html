@@ -1,5 +1,5 @@
 <div class="row">
-  <div *ngIf="activarFilter" class="col-md-4 animated fadeIn">
+  <div [ngClass]="{'sr-only':activar}" class="col-md-4 animated fadeIn">
     <div class="card m-0">
       <div class="card-header p-1">
         <i class="fa fa-filter"></i>
@@ -28,9 +28,9 @@
 
       <div class="card-footer">
         <div class="text-right">
-          <button id="btnBuscarMarcaProducto" type="button" class="btn btn-sm btn-primary mr-1">
+          <button id="btnBuscarMarcaProducto" type="button" class="btn btn-sm btn-success mr-1">
             <i class="fa fa-search" aria-hidden="true"></i> &nbsp;Buscar</button>
-          <button class="btn btn-sm btn-primary" type="button">
+          <button class="btn btn-sm btn-success" type="button">
             <i class="fa fa-print" aria-hidden="true"></i> &nbsp;Nuevo</button>
         </div>
       </div>
@@ -38,21 +38,20 @@
   </div>
   <!-- seccion de la tabla...-->
 
-  <div *ngIf="activarFilter" class="col-md-8  animated fadeIn">
+  <div [ngClass]="{'col-md-8':!activar,'col-md-12':activar}" class="animated fadeIn">
     <div class="card">
       <div class="card-header ">
-
-        <button class="btn btn-primary mr-1" *ngIf="isScreamMd" (click)="cambiarActivar()" type="button"
+        <button class="btn btn-sm btn-success mr-1" *ngIf="isScreamMd" (click)="cambiarActivar()" type="button"
           title="ocultar_title">
-          <i class="fa  fa-arrow-left " aria-hidden="true"></i>
+          <i class="{{activar?'fa fa-arrow-right':'fa fa-arrow-left'}}" aria-hidden="true"></i>
         </button>
-        <strong>Listado de docentes -<span class="text-primary">SocialDoc</span></strong>
+        <strong>Listado de docentes -<span class="text-success"> SocialDoc</span></strong>
         <div class="btn-group d-none float-right d-lg-block">
-          <button type="button" class="btn btn-sm btn-primary mr-1">
+          <button type="button" class="btn btn-sm btn-success mr-1">
             <i class="fa fa-print" aria-hidden="true"></i>Importar
           </button>
-          <button type="button" class="btn btn-sm btn-primary mr-1">
-            <i class="fa  fa-download"></i>Exportar
+          <button type="button" class="btn btn-sm btn-success mr-1">
+            <i class="fa fa-download"></i>Exportar
           </button>
         </div>
       </div>
@@ -69,7 +68,7 @@
             </div>
           </div>
           <div class="col-sm-7 col-md-6">
-            <div class="float-right pr-1">
+            <div class="float-right p-1">
               N- Columnas Seleccionadas </div>
           </div>
         </div>
@@ -96,93 +95,15 @@
                     <td>{{item.email}}</td>
                     <td>{{item.age}}</td>
                     <td>
-                      <span class="label label-info">info</span>
+                      <span class=" label label-info">info</span>
                     </td>
                   </tr>
                 </tbody>
               </table>
-
             </card>
           </div>
         </div>
       </div>
     </div>
-
-
-
-  </div>
-
-  <div *ngIf="!activarFilter" class="col-md-12  animated fadeIn">
-    <div class="card">
-      <div class="card-header ">
-
-        <button class="btn btn-primary mr-1" *ngIf="isScreamMd" (click)="cambiarActivar()" type="button"
-          title="ocultar_title">
-          <i class="fa  fa-arrow-right " aria-hidden="true"></i>
-        </button>
-        <strong>Listado de docentes -<span class="text-primary">SocialDoc</span></strong>
-        <div class="card-header-actions btn-group d-none float-right d-lg-block">
-          <button type="button" class="btn btn-sm btn-primary mr-1">
-            <i class="fa fa-print" aria-hidden="true"></i>Importar
-          </button>
-          <button type="button" class="btn btn-sm btn-primary mr-1">
-            <i class="fa  fa-download"></i>Exportar
-          </button>
-        </div>
-      </div>
-      <!--filtrar-->
-      <div class="card-body p-0">
-        <div class="row ">
-          <div class="col-sm-5 col-md-6">
-            <div class="input-group p-1">
-              <input type="text" class="form-control form-control-sm input-filter" size="100"
-                style="font-family: Arial, FontAwesome;" placeholder="&#xf0b0;Filtrar..." size="100">
-              <div class="input-group-append">
-                <span class="input-group-text"><i class="fa fa-search"></i></span>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-7 col-md-6">
-            <div class="float-right pr-1">
-              N- Columnas Seleccionadas </div>
-          </div>
-        </div>
-        <!--tabla-->
-        <div class="row">
-          <div class="col-md-12">
-            <card cardTitle="Data Table">
-              <table class="table table-bordered table-hover">
-                <thead>
-                  <tr>
-                    <th>FIRSTNAME</th>
-                    <th>LASTNAME</th>
-                    <th>USERNAME</th>
-                    <th>EMAIL</th>
-                    <th>AGE</th>
-                    <th>STATE</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let item of tableData ">
-                    <td>{{item.firstName}}</td>
-                    <td>{{item.lastName}}</td>
-                    <td>{{item.username}}</td>
-                    <td>{{item.email}}</td>
-                    <td>{{item.age}}</td>
-                    <td>
-                      <span class="label label-info">info</span>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-
-            </card>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
   </div>
 </div>

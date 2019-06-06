@@ -53,16 +53,10 @@ export class AuthService {
                         };
                         localStorage.setItem(LS.KEY_CURRENT_USER, JSON.stringify(user));
                         localStorage.setItem("locationPathName", location.pathname);
-                        if (jsonResp.iniciales) {
-                            localStorage.setItem(LS.KEY_SISINFOTO, JSON.stringify(jsonResp.sisInfoTO));
-                            localStorage.setItem(LS.KEY_DATOS_INICIALES, JSON.stringify(jsonResp.iniciales));
-                            localStorage.setItem(LS.KEY_NOTIFICACIONES, JSON.stringify(jsonResp.notificaciones));
-                            localStorage.setItem(LS.KEY_FOTO_PERFIL, JSON.stringify(jsonResp.iniciales && jsonResp.iniciales.usuario ? jsonResp.iniciales.usuario.imagen : ""));
-                            contexto.logueoCorrecto();
-                        } else {
-                            this.router.navigate(['/cambiarclave']);
-                            contexto.cargando = false;
-                        }
+                        localStorage.setItem(LS.KEY_SISINFOTO, JSON.stringify(jsonResp.sisInfoTO));
+                        localStorage.setItem(LS.KEY_DATOS_INICIALES, JSON.stringify(jsonResp.iniciales));
+                        localStorage.setItem(LS.KEY_FOTO_PERFIL, JSON.stringify(jsonResp.iniciales && jsonResp.iniciales.usuario ? jsonResp.iniciales.usuario.imagen : ""));
+                        contexto.logueoCorrecto();
                     } else {
                         this.toastr.error(jsonResp.operacionMensaje, LS.TOAST_ERROR);
                         contexto.cargando = false;
