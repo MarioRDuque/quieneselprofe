@@ -15,6 +15,7 @@ import { ApiRequestService } from './services/api-request.service';
 import { AuthService } from './services/auth.service';
 import { AppConfig } from './services/app-config';
 import { HttpClientModule } from '@angular/common/http';
+import { AgGridModule } from 'ag-grid-angular';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     FormsModule,
     ToastNoAnimationModule.forRoot(),
+    AgGridModule.withComponents([]),
     NgbModule.forRoot(),
     HttpClientModule,
     ScrollToModule.forRoot(),

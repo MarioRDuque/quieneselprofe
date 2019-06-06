@@ -8,8 +8,8 @@ const routesModule: Routes = [
     component: ModulosComponent,
     children: [
       { path: '', redirectTo: 'index', pathMatch: 'full' },
-      { path: 'index', loadChildren: './index/index.module#IndexModule' },
-      { path: 'profile', loadChildren: './profile/profile.module#ProfileModule' }
+      { path: 'index', loadChildren: () => import('./index/index.module').then(m => m.IndexModule) },
+      { path: 'profile', loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule) }
     ]
   }
 ];

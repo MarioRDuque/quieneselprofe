@@ -7,20 +7,20 @@ import { ClearMenuResolve } from './services/clearMenu.resolve';
 const appRoutes: Routes = [
   {
     path: 'docentes',
-    loadChildren: './publico/publico.module#PublicoModule'
+    loadChildren: () => import('./publico/publico.module').then(m => m.PublicoModule)
   },
   {
     path: 'login',
-    loadChildren: './login/login.module#LoginModule'
+    loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
   },
   {
     path: 'cambiarclave',
-    loadChildren: './cambiar-clave/cambiar-clave.module#CambiarClaveModule',
+    loadChildren: () => import('./cambiar-clave/cambiar-clave.module').then(m => m.CambiarClaveModule),
     canActivate: [AuthGuardService]
   },
   {
     path: 'modulos',
-    loadChildren: './modulos/modulos.module#ModulosModule',
+    loadChildren: () => import('./modulos/modulos.module').then(m => m.ModulosModule),
     // canActivate: [AuthGuardService],
     resolve: {
       clear: ClearMenuResolve

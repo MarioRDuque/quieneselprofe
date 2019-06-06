@@ -10,7 +10,7 @@ const routesPublico: Routes = [
   },
   {
     path: 'suscripcion',
-    loadChildren: './suscripcion/suscripcion.module#SuscripcionModule',
+    loadChildren: () => import('./suscripcion/suscripcion.module').then(m => m.SuscripcionModule),
     runGuardsAndResolvers: 'always'
   }
 ];

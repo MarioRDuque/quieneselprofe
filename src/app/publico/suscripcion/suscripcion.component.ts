@@ -25,23 +25,24 @@ export class SuscripcionComponent implements OnInit {
     private utilService: UtilService,
     private toastr: ToastrService,
     private navegar: Router,
-    private api: ApiRequestService,
-    private _suscripcionService:SuscripcionService
+    private suscripcionService: SuscripcionService
 
   ) { }
 
   ngOnInit() {
     this.obtenerFacultades();
   }
-  obtenerFacultades(){
-    this.cargando=true;
-    this._suscripcionService.obtenerFacultades(this);
+
+  obtenerFacultades() {
+    this.cargando = true;
+    this.suscripcionService.obtenerFacultades(this);
   }
+
   enviar(form: NgForm) {
-    this.suscriptor.pendienteAprob="V";
+    this.suscriptor.pendienteAprob = "V";
     let formularioTocado = this.utilService.establecerFormularioTocado(form);
     if (formularioTocado && form && form.valid) {
-      this._suscripcionService.solicitarSuscripcion(this);
+      this.suscripcionService.solicitarSuscripcion(this);
     } else {
       this.toastr.error(LS.MSJ_CAMPOS_INVALIDOS, LS.MSJ_TITULO_INVALIDOS);
     }
@@ -49,11 +50,12 @@ export class SuscripcionComponent implements OnInit {
 
   limpiar() {
     this.suscriptor = new Suscriptor();
-    this.toastr.warning("Los campos estan en blanco y sin valor", "CLEAN")
+    this.toastr.warning("Los campos estan en blanco y sin valor")
   }
 
   salir() {
     this.toastr.info("Usted ha cancelado la suscripción", "CANCELAR");
     this.navegar.navigate(['/docentes']);
   }
+
 }

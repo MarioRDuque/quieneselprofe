@@ -109,7 +109,7 @@ export class ApiRequestService {
     }
 
     handleError(error: any): Promise<any> {
-        return Promise.reject(error.message || error);
+        return Promise.reject(error.error && error.error.message ? error.error : error);
     }
 
     hayTiempoSession() {

@@ -7,7 +7,6 @@ import { AppConfig } from '../services/app-config';
 import { HttpClientModule } from '@angular/common/http';
 
 import { NgxPaginationModule } from 'ngx-pagination';
-import { JsonpModule } from '@angular/http';
 
 /* components */
 import { CardComponent } from './components/card/card.component';
@@ -41,8 +40,7 @@ import { ProfileComponent } from './components/profile/profile.component';
     FormsModule,
     HttpClientModule,
     NgxPaginationModule,
-    ReactiveFormsModule,
-    JsonpModule
+    ReactiveFormsModule
   ],
   exports: [
     CommonModule,
