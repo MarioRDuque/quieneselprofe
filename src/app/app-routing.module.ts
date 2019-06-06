@@ -21,13 +21,13 @@ const appRoutes: Routes = [
   {
     path: 'modulos',
     loadChildren: () => import('./modulos/modulos.module').then(m => m.ModulosModule),
-    // canActivate: [AuthGuardService],
+    canActivate: [AuthGuardService],
     resolve: {
       clear: ClearMenuResolve
     },
     runGuardsAndResolvers: 'always'
   },
-  { path: '', redirectTo: '/docentes', pathMatch: 'full' },
+  { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: '**', component: Error404Component }
 ];
 

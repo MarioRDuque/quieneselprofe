@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { DataService } from '../../services/dataService';
 
 @Component({
@@ -28,8 +28,15 @@ export class IndexComponent implements OnInit {
   pageChanged(pN: number): void {
     this.pageNumber = pN;
   }
+
   cambiarActivar() {
-    this.activarFilter = !this.activarFilter;
-    //this.enviarAccion.emit({ accion: LS.ACCION_ACTIVAR, activar: this.activar });
+    this.activar = !this.activar;
   }
+
+  /** Actualiza el valor de la pantalla */
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.isScreamMd = window.innerWidth <= 576 ? false : true;
+  }
+
 }
