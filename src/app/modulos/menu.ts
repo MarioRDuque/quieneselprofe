@@ -7,7 +7,7 @@ export let MENU_ITEM = [
     {
         path: 'editor',
         title: 'Perfil',
-        icon: 'pencil'
+        icon: 'user'
     },
     {
         path: 'icon',
@@ -17,7 +17,7 @@ export let MENU_ITEM = [
     {
         path: 'profile',
         title: 'Horario',
-        icon: 'user'
+        icon: 'pencil'
     },
     {
         path: 'ui',
@@ -26,7 +26,7 @@ export let MENU_ITEM = [
         children: [
             {
                 path: 'grid',
-                title: 'Bootstrap Grid'
+                title: 'Investigaciones'
             },
             {
                 path: 'buttons',
