@@ -27,7 +27,7 @@ const appRoutes: Routes = [
     },
     runGuardsAndResolvers: 'always'
   },
-  { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: '', redirectTo: 'docentes', pathMatch: 'full' },
   { path: '**', component: Error404Component }
 ];
 
